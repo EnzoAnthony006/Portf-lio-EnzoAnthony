@@ -691,7 +691,7 @@
     </div>
 
 </section>
-<!-- end person -->
+
 <section id="projects">
     <div class="projects-tilte">
         <h2 class="fade-sroll">PROJETOS 🛠️</h2>
@@ -719,7 +719,7 @@
             </div>
         </div>
 
-        <!-- CARD 2 -->
+
         <div class="cards-project ">
             <div class="content-project">
                 <div class="image-project">
@@ -740,7 +740,7 @@
             </div>
         </div>
 
-        <!-- CARD 3 -->
+
         <div class="cards-project ">
             <div class="content-project">
                 <div class="image-project">
@@ -771,7 +771,7 @@
     </div>
 
     <div class="contacts-icons-wrapper">
-        <!-- Localização -->
+
         <div class="contact-item">
             <i class="fa-solid fa-map-location-dot"></i>
             <div class="contact-info">
@@ -780,7 +780,7 @@
             </div>
         </div>
 
-        <!-- E-mail -->
+
         <div class="contact-item">
             <i class="fa-solid fa-envelope-open-text"></i>
             <div class="contact-info">
@@ -789,7 +789,7 @@
             </div>
         </div>
 
-        <!-- Telefone -->
+
         <div class="contact-item">
             <i class="fa-solid fa-phone"></i>
             <div class="contact-info">
@@ -813,7 +813,7 @@
 </script>
 
 <script>
-    // SEU JS DE SCROLL (não mexe)
+
     const elements = document.querySelectorAll(
       '.reveal-scroll, .section-subtitle h2 p, h3.about-title, h4.about-description, h4.about-Curriculum, .button-cta button'
     );
@@ -826,6 +826,36 @@
 
     elements.forEach(el => observer.observe(el));
 </script>
+
+<style>
+    @media (max-width: 768px) {
+      #other-side {
+        width: 100%;
+        height: 50vh;
+        background-size: contain;
+        background-position: center top;
+      }
+
+      .wrapper-profile-photo {
+        width: 150px;
+        height: 150px;
+      }
+
+      #person {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 5rem;
+      }
+
+      .person-content {
+        text-align: center;
+        padding: 1rem;
+      }
+    }
+</style>
+
+
 
 
  </body>
