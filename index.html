@@ -33,6 +33,13 @@
           --darkorange: #FF8C00;
           --accent-header: #8F63FF;
         }
+        html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--dark);
+    }
 
         html { font-size: 10px; }
         body { font-family: 'Poppins', sans-serif; }
@@ -840,22 +847,25 @@
   }
 
   .person-content {
-    width: 90%;
-    text-align: center;
-    padding: 2rem 1rem;
+     width: 100%;
+    min-height: 50vh;
+    background: var(--dark);
+     display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
   }
 
   #other-side {
-    width: 100%;
-    height: auto;
-    min-height: 300px;
-    background-size: contain;
-    background-position: center top;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background: linear-gradient(100deg, rgba(30,30,47,0.6), rgba(22,22,38,0.6)),
+              radial-gradient(circle at top left, rgba(143,99,255,0.25), transparent 30%),
+              url(./assets/img/imagemparausar.jpg) center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
 
   .wrapper-profile-photo {
