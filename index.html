@@ -837,6 +837,48 @@
 <style>
     @media (max-width: 768px) {
 
+    html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--dark);
+    }
+
+    #person, #about, #projects, #contacts {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--dark);
+    }
+    .img-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: auto;
+     max-width: 500px;
+     object-fit: contain;
+     object-position: center;
+     }
+
+     .wrapper-profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--dark);
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #header {
     flex-direction: column;
     height: 60px;
