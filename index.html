@@ -843,6 +843,7 @@
         margin: 0;
         padding: 0;
         background: var(--dark);
+        overflow-x: hidden;
     }
 
     #header {
@@ -855,6 +856,7 @@
     .header-title h1 {
         font-size: 1.6rem;
         line-height: 2rem;
+        text-align: center;
     }
 
     .navbar ul {
@@ -874,11 +876,12 @@
         justify-content: flex-start;
         padding-top: 2rem;
         height: auto;
+        background: var(--dark);
     }
 
     .person-content {
         width: 100%;
-        min-height: 50vh;
+        min-height: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -886,6 +889,7 @@
         padding: 2rem 1rem;
         box-sizing: border-box;
         background: var(--dark);
+        text-align: center;
     }
 
     #other-side {
@@ -896,6 +900,26 @@
         justify-content: center;
         align-items: center;
         padding: 1rem 0;
+    }
+
+    #other-side::before,
+    #other-side::after {
+        display: none;
+    }
+
+    .img-wrapper {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .img-wrapper img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 
     .wrapper-profile-photo {
@@ -923,10 +947,6 @@
     }
 
     .background-about .img-wrapper {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin-bottom: 1rem;
     }
 
@@ -1004,6 +1024,7 @@
     .image-project img {
         width: 100%;
         height: auto;
+        object-fit: cover;
     }
 
     .content-project span {
@@ -1066,6 +1087,7 @@
         height: 150px;
     }
 }
+
 
 
 
