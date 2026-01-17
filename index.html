@@ -891,12 +891,11 @@
     #other-side {
         display: flex;
         width: 100%;
-        height: 280px;
-        background:
-            linear-gradient(180deg, rgba(30,30,47,0.85), rgba(22,22,38,0.85)),
-            url("./.idea/imagemparausar.jpg") center / cover no-repeat;
+        height: auto;
+        background: none;
         justify-content: center;
         align-items: center;
+        padding: 1rem 0;
     }
 
     .wrapper-profile-photo {
@@ -1056,6 +1055,18 @@
         font-size: 1rem;
     }
 }
+
+@media (max-width: 360px) {
+    .header-title h1 {
+        font-size: 1.4rem;
+    }
+
+    .wrapper-profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+}
+
 
 
 
