@@ -844,256 +844,265 @@
 
 <style>
     @media (max-width: 768px) {
-    html, body {
-        width: 100%;
-        min-height: 100%;
-        margin: 0;
-        padding: 0;
-        background: var(--dark);
-        overflow-x: hidden;
-    }
+     html, body {
+         width: 100%;
+         min-height: 100%;
+         margin: 0;
+         padding: 0;
+         background: var(--dark);
+         overflow-x: hidden;
+     }
 
-    #header {
-        flex-direction: column;
-        height: auto;
-        padding: 12px 16px;
-        gap: 1rem;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-    }
+     #header {
+         flex-direction: column;
+         height: auto;
+         padding: 12px 16px;
+         gap: 1rem;
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         z-index: 1000;
+     }
 
-    .header-title h1 {
-        font-size: 1.6rem;
-        line-height: 2rem;
-        text-align: center;
-    }
+     .header-title h1 {
+         font-size: 1.6rem;
+         line-height: 2rem;
+         text-align: center;
+     }
 
-    .navbar ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.8rem;
-    }
+     .navbar ul {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 0.8rem;
+     }
 
-    .navbar ul li a {
-        font-size: 1rem;
-    }
+     .navbar ul li a {
+         font-size: 1rem;
+     }
 
-    #person {
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 110px;
-        height: auto;
-    }
+     #person {
+         flex-direction: column;
+         align-items: center;
+         justify-content: flex-start;
+         padding-top: 90px;
+         height: auto;
+     }
 
-    .person-content {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem 1rem;
-        box-sizing: border-box;
-        background: var(--dark);
-        text-align: center;
-    }
+     .person-content {
+         width: 100%;
+         height: auto;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         padding: 1.5rem 1rem;
+         box-sizing: border-box;
+         background: var(--dark);
+         text-align: center;
+     }
 
-    #other-side {
-        width: 100%;
-        height: auto;
-        padding: 0;
-        margin: 0;
-        background: transparent;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+     .person-content h1 {
+         font-size: 1.8rem;
+         line-height: 2.2rem;
+     }
 
-    #other-side::before,
-    #other-side::after {
-        display: none;
-    }
+     .person-content h1 span {
+         font-size: 2.1rem;
+     }
 
-    .wrapper-profile-photo {
-        width: 180px;
-        height: 180px;
-        margin: 2rem auto 1.5rem;
-    }
+     #other-side {
+         width: 100%;
+         height: auto;
+         padding: 0;
+         margin: 0;
+         background: transparent;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+     }
 
-    .stacks {
-        justify-content: center;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
+     #other-side::before,
+     #other-side::after {
+         display: none;
+     }
 
-    #about {
-        flex-direction: column;
-        height: auto;
-        padding: 2rem 1rem;
-        margin-top: 0;
-    }
+     .wrapper-profile-photo {
+         width: 140px;
+         height: 140px;
+         margin: 1.5rem auto 1rem;
+     }
 
-    .background-about,
-    .box-about {
-        width: 100%;
-        height: auto;
-    }
+     .stacks {
+         justify-content: center;
+         gap: 1rem;
+         flex-wrap: wrap;
+     }
 
-    .background-about .img-wrapper {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
+     #about {
+         flex-direction: column;
+         height: auto;
+         padding: 2rem 1rem;
+         margin-top: 0;
+     }
 
-    .background-about .img-wrapper::after {
-        display: none;
-    }
+     .background-about,
+     .box-about {
+         width: 100%;
+         height: auto;
+     }
 
-    .background-about .img-wrapper img {
-        width: 100%;
-        max-width: 480px;
-        height: auto;
-        object-fit: contain;
-        object-position: center;
-    }
+     .background-about .img-wrapper {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-bottom: 1rem;
+     }
 
-    .box-about {
-        padding: 1rem;
-        margin-top: 1rem;
-        text-align: center;
-    }
+     .background-about .img-wrapper::after {
+         display: none;
+     }
 
-    .section-subtitle h2 p {
-        font-size: 2rem;
-        line-height: 2.5rem;
-    }
+     .background-about .img-wrapper img {
+         width: 100%;
+         max-width: 480px;
+         height: auto;
+         object-fit: contain;
+         object-position: center;
+     }
 
-    h3.about-title {
-        font-size: 1.8rem;
-        margin: 2rem 0 1rem 0;
-    }
+     .box-about {
+         padding: 1rem;
+         margin-top: 1rem;
+         text-align: center;
+     }
 
-    h4.about-description,
-    h4.about-Curriculum {
-        font-size: 1.3rem;
-        line-height: 1.8rem;
-        margin: 0.5rem 0;
-    }
+     .section-subtitle h2 p {
+         font-size: 2rem;
+         line-height: 2.5rem;
+     }
 
-    .button-cta {
-        display: flex;
-        justify-content: center;
-        margin-top: 2rem;
-    }
+     h3.about-title {
+         font-size: 1.8rem;
+         margin: 2rem 0 1rem 0;
+     }
 
-    .button-cta button {
-        width: 80%;
-        max-width: 180px;
-        font-size: 1.2rem;
-    }
+     h4.about-description,
+     h4.about-Curriculum {
+         font-size: 1.3rem;
+         line-height: 1.8rem;
+         margin: 0.5rem 0;
+     }
 
-    #projects {
-        height: auto;
-        padding: 2rem 1rem;
-    }
+     .button-cta {
+         display: flex;
+         justify-content: center;
+         margin-top: 2rem;
+     }
 
-    .projects-tilte h2 {
-        font-size: 2rem;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
+     .button-cta button {
+         width: 80%;
+         max-width: 180px;
+         font-size: 1.2rem;
+     }
 
-    .wrapper-projects {
-        flex-direction: column;
-        gap: 2rem;
-        height: auto;
-        margin-top: 1rem;
-    }
+     #projects {
+         height: auto;
+         padding: 2rem 1rem;
+     }
 
-    .cards-project {
-        width: 90%;
-        height: auto;
-        padding: 20px;
-        margin: 0 auto;
-    }
+     .projects-tilte h2 {
+         font-size: 2rem;
+         text-align: center;
+         margin-bottom: 2rem;
+     }
 
-    .image-project {
-        width: 100%;
-        height: auto;
-    }
+     .wrapper-projects {
+         flex-direction: column;
+         gap: 2rem;
+         height: auto;
+         margin-top: 1rem;
+     }
 
-    .image-project img {
-        width: 100%;
-        height: auto;
-    }
+     .cards-project {
+         width: 90%;
+         height: auto;
+         padding: 20px;
+         margin: 0 auto;
+     }
 
-    .content-project span {
-        font-size: 1.5rem;
-    }
+     .image-project {
+         width: 100%;
+         height: auto;
+     }
 
-    .content-project p {
-        font-size: 1rem;
-    }
+     .image-project img {
+         width: 100%;
+         height: auto;
+     }
 
-    .cta-project {
-        flex-direction: column;
-        gap: 1rem;
-    }
+     .content-project span {
+         font-size: 1.5rem;
+     }
 
-    #contacts {
-        padding: 2rem 1rem;
-    }
+     .content-project p {
+         font-size: 1rem;
+     }
 
-    .contact-title h2 {
-        font-size: 2rem;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
+     .cta-project {
+         flex-direction: column;
+         gap: 1rem;
+     }
 
-    .contacts-icons-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-    }
+     #contacts {
+         padding: 2rem 1rem;
+     }
 
-    .contact-item {
-        width: 90%;
-        justify-content: flex-start;
-        gap: 1rem;
-    }
+     .contact-title h2 {
+         font-size: 2rem;
+         text-align: center;
+         margin-bottom: 2rem;
+     }
 
-    .contact-item i {
-        font-size: 2.2rem;
-        padding: 0.8rem;
-    }
+     .contacts-icons-wrapper {
+         flex-direction: column;
+         align-items: center;
+         gap: 1.5rem;
+     }
 
-    .contact-info span {
-        font-size: 1.2rem;
-    }
+     .contact-item {
+         width: 90%;
+         justify-content: flex-start;
+         gap: 1rem;
+     }
 
-    .contact-info p,
-    .contact-info a {
-        font-size: 1rem;
-    }
-}
+     .contact-item i {
+         font-size: 2.2rem;
+         padding: 0.8rem;
+     }
 
-@media (max-width: 360px) {
-    .header-title h1 {
-        font-size: 1.4rem;
-    }
+     .contact-info span {
+         font-size: 1.2rem;
+     }
 
-    .wrapper-profile-photo {
-        width: 150px;
-        height: 150px;
-    }
-}
+     .contact-info p,
+     .contact-info a {
+         font-size: 1rem;
+     }
+ }
+
+ @media (max-width: 360px) {
+     .header-title h1 {
+         font-size: 1.4rem;
+     }
+
+     .wrapper-profile-photo {
+         width: 120px;
+         height: 120px;
+     }
+ }
 
 
 
