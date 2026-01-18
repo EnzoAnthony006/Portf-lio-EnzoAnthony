@@ -45,11 +45,12 @@
         html { font-size: 10px; }
         body { font-family: 'Poppins', sans-serif; }
 
-        #person {
-          width: 100%;
-          height: 100vh;
-          display: flex;
-        }
+       #person {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+}
 
         @media (max-width: 768px) {
     .contacts-icons-wrapper {
@@ -59,26 +60,32 @@
     }
 }
 
-        .person-content {
-          width: 50%;
-          background: var(--dark);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        #other-side {
-          width: 50%;
-          position: relative;
-          overflow: hidden;
-          background: linear-gradient(100deg, rgba(30,30,47,0.6), rgba(22,22,38,0.6)),
-                      radial-gradient(circle at top left, rgba(143,99,255,0.25), transparent 30%),
-                      url(./assets/img/imagemparausar.jpg) center/cover no-repeat;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+       .person-content {
+    width: 50%;
+    min-height: 100vh;
+    height: auto;
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+       #other-side {
+    width: 50%;
+    min-height: 100vh;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(100deg, rgba(30,30,47,0.6), rgba(22,22,38,0.6)),
+                radial-gradient(circle at top left, rgba(143,99,255,0.25), transparent 30%),
+                url(./assets/img/imagemparausar.jpg) center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
         .person-name { text-align: center; }
         .person-name h1 {
           width: 100%;
@@ -876,12 +883,12 @@
         justify-content: flex-start;
         padding-top: 2rem;
         height: auto;
-        background: var(--dark);
     }
 
     .person-content {
         width: 100%;
         min-height: auto;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -893,33 +900,13 @@
     }
 
     #other-side {
-        display: flex;
         width: 100%;
         height: auto;
-        background: none;
+        display: flex;
         justify-content: center;
         align-items: center;
         padding: 1rem 0;
-    }
-
-    #other-side::before,
-    #other-side::after {
-        display: none;
-    }
-
-    .img-wrapper {
-        width: 100%;
-        max-width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-
-    .img-wrapper img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+        background: none;
     }
 
     .wrapper-profile-photo {
@@ -938,6 +925,7 @@
         flex-direction: column;
         height: auto;
         padding: 2rem 1rem;
+        margin-top: 0;
     }
 
     .background-about,
@@ -947,12 +935,20 @@
     }
 
     .background-about .img-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-bottom: 1rem;
+    }
+
+    .background-about .img-wrapper::after {
+        display: none;
     }
 
     .background-about .img-wrapper img {
         width: 100%;
-        max-width: 500px;
+        max-width: 480px;
         height: auto;
         object-fit: contain;
         object-position: center;
@@ -982,7 +978,9 @@
     }
 
     .button-cta {
+        display: flex;
         justify-content: center;
+        margin-top: 2rem;
     }
 
     .button-cta button {
@@ -1024,7 +1022,6 @@
     .image-project img {
         width: 100%;
         height: auto;
-        object-fit: cover;
     }
 
     .content-project span {
@@ -1087,6 +1084,7 @@
         height: 150px;
     }
 }
+
 
 
 
