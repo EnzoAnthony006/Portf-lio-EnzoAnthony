@@ -842,7 +842,12 @@
     left: 0;
     width: 100%;
     padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     z-index: 1000;
+    background: rgba(20, 20, 40, 0.92);
+    backdrop-filter: blur(10px);
   }
 
   .header-title h1 {
@@ -865,12 +870,12 @@
     display: flex;
     flex-direction: column;
     padding-top: 80px;
-    min-height: 100vh;
+    height: auto;
   }
 
   .person-content {
     width: 100%;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -879,19 +884,26 @@
   }
 
   .person-name h1 {
-    font-size: 2rem;
-    line-height: 2.2rem;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stacks-content {
+    margin-top: 0.8rem;
   }
 
   .stacks {
     justify-content: center;
-    gap: 1rem;
+    gap: 0.8rem;
     flex-wrap: wrap;
   }
 
   #other-side {
     width: 100%;
-    min-height: 300px;
+    height: auto;
+    min-height: 220px;
+    margin-bottom: 1rem;
     background: linear-gradient(100deg, rgba(30,30,47,0.6), rgba(22,22,38,0.6)),
                 radial-gradient(circle at top left, rgba(143,99,255,0.25), transparent 30%),
                 url(./assets/img/imagemparausar.jpg) center/cover no-repeat;
@@ -902,24 +914,26 @@
   }
 
   .wrapper-profile-photo {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     background: var(--dark);
-    margin: 1.2rem 0;
+    margin: 1rem 0;
   }
 
   .social-links {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    gap: 1.2rem;
   }
 
   #about {
     flex-direction: column;
-    padding: 2rem 1rem;
+    height: auto;
+    padding: 1.5rem 1rem;
   }
 
   .background-about,
@@ -941,27 +955,30 @@
   }
 
   #projects {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
+    height: auto;
   }
 
   .wrapper-projects {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
+    height: auto;
   }
 
   .cards-project {
     width: 90%;
     margin: 0 auto;
+    height: auto;
   }
 
   #contacts {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
   }
 
   .contacts-icons-wrapper {
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
 }
 
@@ -972,12 +989,26 @@
   }
 
   .person-name h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
   }
 
   .wrapper-profile-photo {
     width: 120px;
     height: 120px;
+  }
+
+  .stacks-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .tech img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .cards-project {
+    width: 95%;
   }
 }
 
