@@ -870,7 +870,7 @@
     display: flex;
     flex-direction: column;
     padding-top: 80px;
-    height: auto;
+    min-height: 100vh;
   }
 
   .person-content {
@@ -901,9 +901,9 @@
 
   #other-side {
     width: 100%;
+    min-height: calc(100vh - 80px);
     height: auto;
-    min-height: 220px;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     background: linear-gradient(100deg, rgba(30,30,47,0.6), rgba(22,22,38,0.6)),
                 radial-gradient(circle at top left, rgba(143,99,255,0.25), transparent 30%),
                 url(./assets/img/imagemparausar.jpg) center/cover no-repeat;
@@ -1011,11 +1011,6 @@
     width: 95%;
   }
 }
-
-
-
-
-
 </style>
 
 
