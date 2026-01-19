@@ -809,17 +809,6 @@
 </section>
 
 
-
-<script>
-    const elements = document.querySelectorAll('.reveal-scroll, .section-subtitle h2 p, h3.about-title, h4.about-description, h4.about-Curriculum, .button-cta button');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('show');
-      });
-    }, { threshold: 0.3 });
-    elements.forEach(el => observer.observe(el));
-</script>
-
 <script>
 
     const elements = document.querySelectorAll(
