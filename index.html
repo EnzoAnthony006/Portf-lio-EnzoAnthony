@@ -883,6 +883,7 @@
     }
 
     #person {
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
@@ -892,9 +893,9 @@
     }
 
     .person-content {
+        order: 1;
         width: 100%;
         height: auto;
-        min-height: auto;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -903,11 +904,6 @@
         box-sizing: border-box;
         background: var(--dark);
         text-align: center;
-    }
-
-
-    .person-content > img {
-        display: none;
     }
 
     .person-content h1 {
@@ -920,10 +916,10 @@
     }
 
     #other-side {
+        order: 2;
         width: 100%;
         height: auto;
-        min-height: auto;
-        padding: 0;
+        padding: 1.5rem 0;
         margin: 0;
         background: transparent;
         display: flex;
@@ -937,6 +933,7 @@
     }
 
     .wrapper-profile-photo {
+        order: 3;
         width: 140px;
         height: 140px;
         margin: 1.5rem auto 1rem;
