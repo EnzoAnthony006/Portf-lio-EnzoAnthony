@@ -776,7 +776,7 @@
             <div class="cards-project">
                 <div class="content-project">
                     <div class="image-project">
-                        <img src="assets/img/jwt.jpg" alt="img-jwt">
+                        <img src="assets/img/API segura com autenticação JWT.png" alt="img-jwt">
                     </div>
                     <span>Secure REST API com Spring Boot</span>
                     <p>
@@ -797,7 +797,7 @@
             <div class="cards-project">
                 <div class="content-project">
                     <div class="image-project">
-                        <img src="assets/img/Novatela.png" alt="TelaCep">
+                        <img src="assets/img/REST API com ViaCEP no mockup.png" alt="TelaCep">
                     </div>
                     <span>REST API com Integração Externa</span>
                     <p>
@@ -903,47 +903,57 @@
 
 
 <script>
-
-    const elements = document.querySelectorAll(
-      '.reveal-scroll, .section-subtitle h2 p, h3.about-title, h4.about-description, h4.about-Curriculum, .button-cta button'
-    );
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-      });
-    }, { threshold: 0.3 });
-
-    elements.forEach(el => observer.observe(el));
-
-
-
-
     const track = document.querySelector(".carousel-track");
     const nextBtn = document.querySelector(".next");
     const prevBtn = document.querySelector(".prev");
 
-    let index = 0;
-    function getCardWidth() {
-    return document.querySelector(".cards-project").offsetWidth + 32;
-}
+    let cards = document.querySelectorAll(".cards-project");
+    let index = 1;
 
-   nextBtn.addEventListener("click", () => {
-    const cardWidth = getCardWidth();
-    if (index < track.children.length - 1) {
-        index++;
+    const cardWidth = cards[0].offsetWidth + 32;
+
+
+    const firstClone = cards[0].cloneNode(true);
+    const lastClone = cards[cards.length - 1].cloneNode(true);
+
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, cards[0]);
+
+    cards = document.querySelectorAll(".cards-project");
+
+    // Começa no primeiro real
+    track.style.transform = `translateX(-${cardWidth}px)`;
+
+
+    nextBtn.addEventListener("click", () => {
+      if (index >= cards.length - 1) return;
+      index++;
+      track.style.transition = "transform 0.5s ease-in-out";
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    });
+
+
+    prevBtn.addEventListener("click", () => {
+      if (index <= 0) return;
+      index--;
+      track.style.transition = "transform 0.5s ease-in-out";
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    });
+
+
+    track.addEventListener("transitionend", () => {
+      if (cards[index].isEqualNode(firstClone)) {
+        track.style.transition = "none";
+        index = 1;
+        track.style.transform = `translateX(-${cardWidth}px)`;
+      }
+
+      if (cards[index].isEqualNode(lastClone)) {
+        track.style.transition = "none";
+        index = cards.length - 2;
         track.style.transform = `translateX(-${index * cardWidth}px)`;
-    }
-});
-
-prevBtn.addEventListener("click", () => {
-    const cardWidth = getCardWidth();
-    if (index > 0) {
-        index--;
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
-    }
-});
-
+      }
+    });
 </script>
 
 <style>
