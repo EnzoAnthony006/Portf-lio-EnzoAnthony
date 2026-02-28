@@ -285,12 +285,14 @@
         .button-cta button:hover { filter: brightness(1.2); box-shadow: 0 0 25px rgba(255,111,60,0.9); }
 
    #projects {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   width: 100%;
   background: var(--dark);
   display: flex;
   flex-direction: column;
   padding: 3rem;
+  overflow: hidden;
 }
 
 .projects-tilte h2 {
@@ -303,15 +305,7 @@
   text-transform: uppercase;
 }
 
-.wrapper-projects {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  height: 500px;
-  margin-top: 2rem;
-  font-family: 'Poppins', sans-serif;
-}
+
 
 .cards-project {
   width: 320px;
@@ -379,11 +373,15 @@
 
 .content-project p {
   color: #3d3d4b;
-  font-weight: bold;
-  font-size: 1.1rem;
+  font-weight: 500;
+  font-size: 0.95rem;
   margin: 0rem 0.75rem;
-}
 
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* limita a 3 linhas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .fade-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -406,6 +404,58 @@
 
 .cards-project:nth-child(3).show {
   transition-delay: 0.6s;
+}
+
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.cards-project {
+  min-width: 320px;
+  flex-shrink: 0;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+
+  background: linear-gradient(135deg, #7C3AED, #ff9a3c);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: linear-gradient(45deg,#7C3AED,#ff9a3c);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }
         .cta-project {
         width: 200px;
@@ -714,72 +764,104 @@
         <h2>PROJETOS 🛠️</h2>
     </div>
 
-   <div class="wrapper-projects">
+    <div class="carousel-container">
 
-        <div class="cards-project ">
-            <div class="content-project">
-                <div class="image-project">
-                     <img src="assets/img/biblioteca.jpg" alt="img-biblioteca">
-                </div>
-                <span>Sistema de Gerenciamento de Biblioteca</span>
-                <p>
-                    Projeto prático em Java aplicando POO, MVC, JDBC e MySQL, simulando um sistema real de gerenciamento de biblioteca.
+        <button class="carousel-btn prev">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
 
-                </p>
-                <div class="cta-project">
-                    <a href="https://github.com/EnzoAnthony006/Biblioteca">
-                        Código <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://github.com/EnzoAnthony006/Biblioteca">
-                        Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <div class="carousel-track">
 
-
-        <div class="cards-project ">
-            <div class="content-project">
-                <div class="image-project">
-                    <img src="assets/img/estacionamento.jpg" alt="Estacionamento">
-                </div>
-                <span>Sistema de Gerenciamento de Estacionamento</span>
-                <p>
-                    Sistema de estacionamento em Java com controle de entrada e saída de veículos, cálculo de tempo de permanência e faturamento automático, aplicando POO.
-
-                </p>
-                <div class="cta-project">
-                    <a href="https://github.com/EnzoAnthony006/Estacionamento" target="_blank" rel="noopener noreferrer">
-                        Código <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://github.com/EnzoAnthony006/Estacionamento">
-                        Site
-                    </a>
+            <!-- CARD 1 -->
+            <div class="cards-project">
+                <div class="content-project">
+                    <div class="image-project">
+                        <img src="assets/img/jwt.jpg" alt="img-jwt">
+                    </div>
+                    <span>Secure REST API com Spring Boot</span>
+                    <p>
+                        API REST com autenticação JWT, autorização por roles (USER/MANAGER) e arquitetura em camadas, aplicando Spring Security, JPA e MySQL.
+                    </p>
+                    <div class="cta-project">
+                        <a href="https://github.com/EnzoAnthony006/spring-securityjwt">
+                            Código <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://github.com/EnzoAnthony006/spring-securityjwt">
+                            Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-
-        <div class="cards-project ">
-            <div class="content-project">
-                <div class="image-project">
-                    <img src="assets/img/API.png" alt="API REST">
-                </div>
-                <span>API REST em Java Spring Boot</span>
-                <p>
-                    API REST em Java com Spring Boot para gerenciamento de usuários, com criação, atualização, remoção e listagem, tratamento de erros personalizado e documentação com Swagger/OpenAPI, aplicando POO e boas práticas de backend.
-                </p>
-
-                <div class="cta-project">
-                    <a href="https://github.com/EnzoAnthony006/my-first-web-api" target="_blank" rel="noopener noreferrer">
-                        Código <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://github.com/EnzoAnthony006/my-first-web-api">
-                        Site
-                    </a>
+            <!-- CARD 2 -->
+            <div class="cards-project">
+                <div class="content-project">
+                    <div class="image-project">
+                        <img src="assets/img/Novatela.png" alt="TelaCep">
+                    </div>
+                    <span>REST API com Integração Externa</span>
+                    <p>
+                        API estruturada com Spring Boot, modelagem relacional e integração com ViaCEP para enriquecimento automático de dados.
+                    </p>
+                    <div class="cta-project">
+                        <a href="https://github.com/EnzoAnthony006/API-REST-Clientes-e-Enderecos" target="_blank">
+                            Código <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://github.com/EnzoAnthony006/API-REST-Clientes-e-Enderecos">
+                            Site
+                        </a>
+                    </div>
                 </div>
             </div>
+
+            <!-- CARD 3 -->
+            <div class="cards-project">
+                <div class="content-project">
+                    <div class="image-project">
+                        <img src="assets/img/TelaMenu.png" alt="img-biblioteca">
+                    </div>
+                    <span>Sistema de Biblioteca (Java + JDBC)</span>
+                    <p>
+                        Sistema backend em Java com MVC, JDBC e MySQL, incluindo controle de empréstimos e validações de regras de negócio.
+                    </p>
+                    <div class="cta-project">
+                        <a href="https://github.com/EnzoAnthony006/Biblioteca.git" target="_blank">
+                            Código <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://github.com/EnzoAnthony006/Biblioteca.git">
+                            Site
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD 4 -->
+            <div class="cards-project">
+                <div class="content-project">
+                    <div class="image-project">
+                        <img src="assets/img/TelaEstacionamentoo.png" alt="Estacionamento">
+                    </div>
+                    <span>Sistema de Estacionamento em Java</span>
+                    <p>
+                        Aplicação em Java com arquitetura em camadas para controle de veículos, cálculo automático de permanência e faturamento.
+                    </p>
+                    <div class="cta-project">
+                        <a href="https://github.com/EnzoAnthony006/Estacionamento.git" target="_blank">
+                            Código <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://github.com/EnzoAnthony006/Estacionamento.git" target="_blank">
+                            Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <button class="carousel-btn next">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
 
     </div>
 </section>
@@ -833,6 +915,35 @@
     }, { threshold: 0.3 });
 
     elements.forEach(el => observer.observe(el));
+
+
+
+
+    const track = document.querySelector(".carousel-track");
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
+
+    let index = 0;
+    function getCardWidth() {
+    return document.querySelector(".cards-project").offsetWidth + 32;
+}
+
+   nextBtn.addEventListener("click", () => {
+    const cardWidth = getCardWidth();
+    if (index < track.children.length - 1) {
+        index++;
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+});
+
+prevBtn.addEventListener("click", () => {
+    const cardWidth = getCardWidth();
+    if (index > 0) {
+        index--;
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+});
+
 </script>
 
 <style>
@@ -980,18 +1091,12 @@
       scroll-margin-top: 110px;
     }
 
-    .wrapper-projects {
-      flex-direction: column;
-      gap: 1.5rem;
-      height: auto;
-      align-items: center;
-    }
+
 
     .cards-project {
-      width: 90%;
-      margin: 0 auto;
-      height: auto;
-    }
+  min-width: 85%;
+  height: auto;
+}
 
     .cta-project a {
       padding: 6px 10px;
