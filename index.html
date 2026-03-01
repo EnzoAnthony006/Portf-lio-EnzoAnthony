@@ -230,59 +230,171 @@
 
 
 
-        #about { height: 100vh; width: 100%; display: flex; background: var(--dark); color: var(--white); }
-        .background-about { width: 50%; height: 100%; }
-        .img-wrapper { width: 100%; height: 100%; position: relative; }
-        .img-wrapper::after { content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: linear-gradient(.25turn, transparent 30%, var(--dark)); }
-        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-        .box-about { display: flex; justify-content: center; flex-direction: column; width: 50%; padding: 3rem; }
-
-        .section-subtitle h2 p { display: inline-block; font-size: 3rem; opacity: 0; transform: translateY(40px); transition: opacity 0.9s ease, transform 0.9s ease; }
-        .section-subtitle h2 p.show { opacity: 1; transform: translateY(0); }
-        .section-subtitle h2 p:nth-child(2) span { padding: 3px 5px; border-radius: 4px; color: var(--dark); background: slateblue; }
-
-        h3.about-title { margin: 3rem 0; font-size: 2rem; color: var(--dark); background: slateblue; display: inline-block; width: fit-content; padding: 2px 4px; border-radius: 4px; opacity: 0; transform: translateY(40px); transition: opacity 0.9s ease, transform 0.9s ease; }
-        h3.about-title.show { opacity: 1; transform: translateY(0); }
-
-        h4.about-description, h4.about-Curriculum { margin: 1rem 3rem; font-size: 1.5rem; line-height: 2.2rem; opacity: 0; transform: translateY(40px); transition: opacity 0.9s ease, transform 0.9s ease; }
-        h4.about-description.show, h4.about-Curriculum.show { opacity: 1; transform: translateY(0); }
-        h4.about-Curriculum span { color: royalblue; font-weight: bold; display: inline; }
-
-         .button-cta {
-         display: flex;
-         justify-content: center;
-
-
-         margin: 2rem 3rem 4rem;
-
-
-         }
-        .button-cta button {
-          display: inline-block;
-          width: 100%;
-          max-width: 172px;
-          padding: 12px;
-          margin-bottom: 3rem;
-          font-family: 'Poppins', sans-serif;
-          font-weight: 700;
-          letter-spacing: .15rem;
-          border-radius: 12px;
-          cursor: pointer;
-          border: none;
-          color: #fff;
-          background: linear-gradient(45deg,#7C3AED, #ff9a3c);
-          box-shadow:   0 0 10px rgba(255,111,60,0.5);
-          opacity: 0;
-          transform: translateY(40px);
-          transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
-        }
-        .button-cta button:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.6);
+    #about {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background: var(--dark);
+  color: var(--white);
 }
 
-        .button-cta button.show { opacity: 1; transform: translateY(0); }
-        .button-cta button:hover { filter: brightness(1.2); box-shadow: 0 0 25px rgba(255,111,60,0.9); }
+
+.background-about {
+  width: 50%;
+  height: 100%;
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.img-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(.25turn, transparent 30%, var(--dark));
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.box-about {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  padding: 5rem 4rem;
+  gap: 2rem;
+}
+
+
+.section-subtitle {
+  margin-bottom: 2.5rem;
+}
+
+.section-subtitle h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 3.8rem;
+  margin-bottom: 1rem;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.section-subtitle h2.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.about-role {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #cfcfff;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.about-role.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.about-title {
+  margin: 3rem 0;
+  font-size: 2rem;
+  color: var(--dark);
+  background: slateblue;
+  display: inline-block;
+  width: fit-content;
+  padding: 2px 4px;
+  border-radius: 4px;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.about-title.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.about-description,
+.about-curriculum {
+  margin: 1rem 0rem;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.about-description.show,
+.about-curriculum.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-curriculum span {
+  color: royalblue;
+  font-weight: bold;
+}
+
+         .button-cta {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 2rem; /* ajustado para não empurrar o botão pra fora */
+}
+
+.button-cta button {
+    display: inline-block;
+    width: 100%;
+    max-width: 172px;
+    padding: 12px;
+    margin-bottom: 0; /* removido para não criar espaço extra */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: .15rem;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    background: linear-gradient(45deg,#7C3AED, #ff9a3c);
+    box-shadow: 0 0 10px rgba(255,111,60,0.5);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+}
+
+.button-cta button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.6);
+    filter: brightness(1.2);
+    box-shadow: 0 0 25px rgba(255,111,60,0.9);
+}
+
+.button-cta button.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
    #projects {
   min-height: 100vh;
@@ -712,51 +824,46 @@
 </section>
 
 <section id="about">
+
     <div class="background-about reveal-scroll">
         <div class="img-wrapper">
             <img src="./assets/img/macbook.jpg" alt="MacBook">
         </div>
     </div>
+
+
     <div class="box-about">
         <div class="section-subtitle">
-            <h2>
-                <p>💻</p>
-                <p><span>Desenvolvedor</span> Back-End</p>
-            </h2>
-            <h2>
-                <p>☁️</p>
-                <p><span>Cloud Computing</span> (AWS)</p>
-            </h2>
+            <h2 class="show">Back-End Developer</h2>
+            <p class="about-role show">Java • Spring Boot • AWS</p>
         </div>
-        <h3 class="about-title">Desenvolvedor Back-End em formação com foco em Java e Cloud Computing (AWS)</h3>
-        <h4 class="about-description">
-            Sou estudante de Sistemas de Informação com foco em Desenvolvimento Backend em Java, Bancos de Dados e Cloud AWS.
 
-            Desenvolvo APIs REST em Java, aplicando Programação Orientada a Objetos (POO), arquitetura MVC, JDBC, JPA e Spring Boot, com SQL/MySQL e DynamoDB, versionamento Git/GitHub e autenticação JWT.
+        <h3 class="about-title show">
+            Perfil Profissional
+        </h3>
 
-            Tenho experiência prática em AWS, incluindo EC2, Auto Scaling, S3, EBS, EFS, VPC, RDS, DynamoDB, CloudWatch e CloudTrail, aplicando conceitos de segurança, escalabilidade, monitoramento, alta disponibilidade e otimização de custos. Participei de labs práticos AWS Cloud Quest, abrangendo multi-AZ, scaling automático, Load Balancer, VPC Peering, RDS Multi-AZ, EFS, EBS, além de experiências em IA generativa com Amazon Bedrock, SageMaker e Intelligent Assistant.
+        <p class="about-description show">
+            Sou estudante de Sistemas de Informação com foco em <strong>Desenvolvimento Back-End em Java</strong> e <strong>Cloud Computing (AWS)</strong>.
 
-            Atualmente aprofundo Spring Boot, incluindo controllers REST, injeção de dependência, arquitetura em camadas, CRUD completo, integração com banco de dados, Swagger/OpenAPI e Spring Security.
+            Desenvolvo APIs REST utilizando boas práticas como arquitetura em camadas, POO e separação de responsabilidades. Trabalho com Java, Spring Boot, JPA, JDBC, autenticação JWT e versionamento com Git/GitHub.
 
-            Também possuo sólidos fundamentos em lógica de programação, algoritmos, estruturas de dados e solução de problemas, aplicados em projetos acadêmicos e pessoais.
+            Na AWS, tenho experiência prática com EC2, S3, RDS, DynamoDB, VPC, Auto Scaling e CloudWatch, aplicando conceitos de escalabilidade, segurança, alta disponibilidade e otimização de custos.
 
-            Busco oportunidade de estágio em Backend ou Cloud para aplicar soluções escaláveis, bem arquitetadas e gerar impacto real em ambientes de produção.</h4>
+            Busco oportunidade de estágio em Backend ou Cloud para evoluir tecnicamente e contribuir com projetos bem estruturados e de impacto.
+        </p>
+
         <div class="curriculum-row">
-            <h4 class="about-Curriculum">
-                abaixo está o meu <span>Currículo</span> para download.
-            </h4>
+            <p class="about-curriculum">
+                Abaixo está o meu <span>Currículo</span> para download.
+            </p>
 
             <div class="button-cta">
-                <a href="./assets/img/Blue Simple Professional CV Resume.pdf" download>
-                    <button>Download CV</button>
+                <a href="assets/img/Enzo-Anthony-CV.pdf" download>
+                    <button class="show">Download CV</button>
                 </a>
             </div>
-
-
-
         </div>
     </div>
-
 </section>
 
 <section id="projects">
@@ -1000,7 +1107,7 @@
     #person {
       display: flex;
       flex-direction: column;
-      padding-top: 80px;
+      padding-top: 110px;
       min-height: auto;
     }
 
@@ -1093,6 +1200,9 @@
     .box-about {
       text-align: center;
       padding: 1rem;
+      display: flex;
+    flex-direction: column;
+    gap: 1rem;
     }
 
     #projects {
@@ -1103,9 +1213,9 @@
 
 
 
-    .cards-project {
-  min-width: 85%;
-  height: auto;
+   .cards-project {
+  width: 90%;
+  margin: 0 auto;
 }
 
     .cta-project a {
@@ -1117,6 +1227,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      transition: 0.3s ease;
     }
 
     .cta-project a:hover {
@@ -1162,10 +1273,11 @@
       width: 95%;
     }
 
-    h4.about-description {
-      font-size: 1.3rem;
-      line-height: 1.8rem;
-    }
+    .about-description {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+
 
     .image-project img {
       transform: none;
