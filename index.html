@@ -743,8 +743,62 @@
     gap: 1.5rem;
   }
 }
+#certifications {
+    width: 100%;
+    background: var(--dark-deep);
+    padding: 6rem 4rem;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    scroll-margin-top: 120px;
+}
+.certifications-header { text-align: center; margin-bottom: 5rem; }
+.certifications-header h2 { font-size: 2.4rem; font-weight: 600; color: var(--white); letter-spacing: 0.15rem; text-transform: uppercase; }
+.certifications-header p { font-size: 1.4rem; color: #cfcfff; margin-top: 0.8rem; }
+.certifications-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.4rem; max-width: 1100px; margin: 0 auto; }
+.cert-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(143,99,255,0.2); border-radius: 16px; padding: 2.8rem 2.4rem; display: flex; flex-direction: column; gap: 1.4rem; position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease; opacity: 0; transform: translateY(30px); }
+.cert-card.show { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+.cert-card:nth-child(1) { transition-delay: 0.1s; }
+.cert-card:nth-child(2) { transition-delay: 0.2s; }
+.cert-card:nth-child(3) { transition-delay: 0.3s; }
+.cert-card:nth-child(4) { transition-delay: 0.4s; }
+.cert-card:nth-child(5) { transition-delay: 0.5s; }
+.cert-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(143,99,255,0.2); border-color: rgba(143,99,255,0.5); }
+.cert-card-top { display: flex; align-items: center; gap: 1.6rem; }
+.cert-logo { width: 52px; height: 52px; object-fit: contain; flex-shrink: 0; }
+.cert-meta { display: flex; flex-direction: column; gap: 0.3rem; }
+.cert-issuer { font-size: 1.1rem; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 0.08rem; }
+.cert-date { font-size: 1.1rem; color: #8888aa; }
+.cert-name { font-size: 1.6rem; font-weight: 700; color: var(--white); line-height: 2.2rem; }
+.cert-desc { font-size: 1.25rem; color: #b0b0cc; line-height: 1.9rem; }
+.cert-tags { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.cert-tag { font-size: 1.05rem; padding: 3px 10px; border-radius: 20px; font-weight: 600; background: rgba(143,99,255,0.15); color: #cfcfff; border: 1px solid rgba(143,99,255,0.3); }
+.cert-tag.orange { background: rgba(255,111,60,0.12); color: #ffb08a; border-color: rgba(255,111,60,0.3); }
+.cert-badge { position: absolute; top: 1.6rem; right: 1.6rem; background: linear-gradient(135deg, #7C3AED, #ff9a3c); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+.cert-link { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 1.2rem; font-weight: 600; color: var(--accent-header); text-decoration: none; transition: color 0.2s; }
+.cert-link:hover { color: var(--orange); }
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.5rem 0.75rem 0;
+}
 
+.project-tag {
+    font-size: 1rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+    background: rgba(143,99,255,0.15);
+    color: #8F63FF;
+    border: 1px solid rgba(143,99,255,0.3);
+}
 
+.project-tag.orange {
+    background: rgba(255,111,60,0.12);
+    color: #FF6F3C;
+    border-color: rgba(255,111,60,0.3);
+}
 
 
 
@@ -896,6 +950,7 @@
                         <a href="https://github.com/EnzoAnthony006/spring-securityjwt">
                             Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
+
                     </div>
                 </div>
             </div>
@@ -973,13 +1028,119 @@
     </div>
 </section>
 
+<section id="certifications">
+    <div class="certifications-header">
+        <h2>CERTIFICAÇÕES 🏅</h2>
+        <p>Formações e credenciais oficiais conquistadas</p>
+    </div>
+
+    <div class="certifications-grid">
+
+        <div class="cert-card">
+            <div class="cert-badge">✦</div>
+            <div class="cert-card-top">
+                <img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
+                <div class="cert-meta">
+                    <span class="cert-issuer">Amazon Web Services</span>
+                    <span class="cert-date">Fev / 2026</span>
+                </div>
+            </div>
+            <div class="cert-name">AWS Cloud Quest: IA Generativa Practitioner</div>
+            <div class="cert-desc">Laboratórios práticos em nuvem com foco em IA Generativa, utilizando Amazon Bedrock e SageMaker.</div>
+            <div class="cert-tags">
+                <span class="cert-tag orange">Bedrock</span>
+                <span class="cert-tag orange">SageMaker</span>
+                <span class="cert-tag">IA Generativa</span>
+                <span class="cert-tag">AWS</span>
+            </div>
+            <a class="cert-link" href="https://www.credly.com/badges/15cb87a5-f818-4848-a01c-815b6af74038" target="_blank">Ver credencial <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-badge">✦</div>
+            <div class="cert-card-top">
+                <img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
+                <div class="cert-meta">
+                    <span class="cert-issuer">Amazon Web Services</span>
+                    <span class="cert-date">Dez / 2025</span>
+                </div>
+            </div>
+            <div class="cert-name">AWS Cloud Practitioner Essentials</div>
+            <div class="cert-desc">Fundamentos de computação em nuvem com AWS: IAM, EC2, S3, RDS, VPC, Lambda e CloudWatch.</div>
+            <div class="cert-tags">
+                <span class="cert-tag orange">EC2</span>
+                <span class="cert-tag orange">S3</span>
+                <span class="cert-tag">IAM</span>
+                <span class="cert-tag">VPC</span>
+                <span class="cert-tag">RDS</span>
+            </div>
+            <a class="cert-link" href="https://www.credly.com/badges/6ae9c931-4575-4d30-b3fe-a5224a3a5c01/linked_in_profile" target="_blank">Ver credencial <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-badge">✦</div>
+            <div class="cert-card-top">
+                <img class="cert-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                <div class="cert-meta">
+                    <span class="cert-issuer">DIO × CI&T</span>
+                    <span class="cert-date">Fev / 2026</span>
+                </div>
+            </div>
+            <div class="cert-name">Bootcamp CI&T — Backend com Java e AWS</div>
+            <div class="cert-desc">Backend com Java, Spring Boot, APIs REST, bancos SQL/NoSQL e fundamentos AWS com projetos práticos.</div>
+            <div class="cert-tags">
+                <span class="cert-tag orange">Spring Boot</span>
+                <span class="cert-tag orange">APIs REST</span>
+                <span class="cert-tag">MySQL</span>
+                <span class="cert-tag">DynamoDB</span>
+            </div>
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-badge">✦</div>
+            <div class="cert-card-top">
+                <img class="cert-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                <div class="cert-meta">
+                    <span class="cert-issuer">Impacta Tecnologia</span>
+                    <span class="cert-date">Dez / 2025</span>
+                </div>
+            </div>
+            <div class="cert-name">Java — Criando uma Aplicação Completa</div>
+            <div class="cert-desc">Aplicação completa em Java com POO, arquitetura em camadas, banco de dados e persistência.</div>
+            <div class="cert-tags">
+                <span class="cert-tag orange">Java</span>
+                <span class="cert-tag">POO</span>
+                <span class="cert-tag">JDBC</span>
+                <span class="cert-tag">MVC</span>
+            </div>
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-badge">✦</div>
+            <div class="cert-card-top">
+                <img class="cert-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="filter: invert(1);">
+                <div class="cert-meta">
+                    <span class="cert-issuer">DIO</span>
+                    <span class="cert-date">Jan / 2026</span>
+                </div>
+            </div>
+            <div class="cert-name">Contribuindo em Projetos Open Source no GitHub</div>
+            <div class="cert-desc">Pull requests, revisão de código, versionamento e trabalho remoto em equipe.</div>
+            <div class="cert-tags">
+                <span class="cert-tag orange">Git</span>
+                <span class="cert-tag">GitHub</span>
+                <span class="cert-tag">Open Source</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 <section id="contacts">
     <div class="contact-title">
         <h2>Contato 📞</h2>
     </div>
-
     <div class="contacts-icons-wrapper">
-
         <div class="contact-item">
             <i class="fa-solid fa-map-location-dot"></i>
             <div class="contact-info">
@@ -987,8 +1148,6 @@
                 <p>Osasco, São Paulo, Brasil</p>
             </div>
         </div>
-
-
         <div class="contact-item">
             <i class="fa-solid fa-envelope-open-text"></i>
             <div class="contact-info">
@@ -996,8 +1155,6 @@
                 <a href="mailto:enzoanthonydev06@gmail.com">enzoanthonydev06@gmail.com</a>
             </div>
         </div>
-
-
         <div class="contact-item">
             <i class="fa-solid fa-phone"></i>
             <div class="contact-info">
@@ -1061,6 +1218,14 @@
         track.style.transform = `translateX(-${index * cardWidth}px)`;
       }
     });
+
+    const certObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+}, { threshold: 0.15 });
+document.querySelectorAll('.cert-card').forEach(card => certObserver.observe(card));
+
 </script>
 
 <style>
@@ -1254,6 +1419,21 @@
         min-width: 46px;
         min-height: 46px;
     }
+    #projects {
+    scroll-margin-top: 120px;
+}
+
+#about {
+    scroll-margin-top: 120px;
+}
+
+#person {
+    scroll-margin-top: 120px;
+}
+
+#contacts {
+    scroll-margin-top: 120px;
+}
 }
 
 @media (max-width: 400px) {
