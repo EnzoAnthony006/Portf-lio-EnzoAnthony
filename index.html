@@ -799,6 +799,20 @@
     color: #FF6F3C;
     border-color: rgba(255,111,60,0.3);
 }
+       .carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.5s ease-in-out;
+  width: max-content;
+}
 
 
 
@@ -844,6 +858,22 @@
                 <div class="tech">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
                     <p>Java</p>
+                </div>
+                <div class="tech">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
+                    <p>Spring Boot</p>
+                </div>
+                <div class="tech">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                    <p>MySQL</p>
+                </div>
+                <div class="tech">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/junit/junit-original.svg" alt="JUnit 5">
+                    <p>JUnit 5</p>
+                </div>
+                <div class="tech">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                    <p>Docker</p>
                 </div>
                 <div class="tech">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
@@ -897,7 +927,7 @@
         </h3>
 
         <p class="about-description show">
-            Estudante de Sistemas de Informação com foco em desenvolvimento Backend e Cloud Computing. Desenvolvo APIs REST com Java e Spring Boot, aplicando boas práticas de arquitetura, autenticação JWT e integração com banco de dados. Possuo experiência prática em AWS com EC2, S3, RDS, DynamoDB e VPC. Busco estágio em Backend ou Cloud onde possa contribuir com código real desde o primeiro dia.
+            Desenvolvedor Backend com foco em Java e Spring Boot, especializado em APIs REST com autenticação JWT, controle de acesso por roles e integração com banco de dados relacional. Experiência prática em AWS com EC2, S3, RDS, DynamoDB e VPC, com certificações oficiais na plataforma. Busco uma oportunidade como Dev Backend Jr ou estágio onde possa contribuir com código real desde o primeiro dia.
         </p>
 
         <div class="curriculum-row">
@@ -937,13 +967,9 @@
                         API REST para gerenciamento de cursos, alunos e matrículas com autenticação JWT e controle de acesso por roles.
                     </p>
                     <div class="cta-project">
-                        <a href="https://github.com/EnzoAnthony006/gestao-academica-api">
+                        <a href="https://github.com/EnzoAnthony006/gestao-academica-api" target="_blank">
                             Código <i class="fa-brands fa-github"></i>
                         </a>
-                        <a href="https://github.com/EnzoAnthony006/gestao-academica-api">
-                            Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-
                     </div>
                 </div>
             </div>
@@ -959,18 +985,14 @@
                         API REST com autenticação JWT, autorização por roles (USER/MANAGER) e arquitetura em camadas, aplicando Spring Security, JPA e MySQL.
                     </p>
                     <div class="cta-project">
-                        <a href="https://github.com/EnzoAnthony006/spring-securityjwt">
+                        <a href="https://github.com/EnzoAnthony006/spring-securityjwt" target="_blank">
                             Código <i class="fa-brands fa-github"></i>
                         </a>
-                        <a href="https://github.com/EnzoAnthony006/spring-securityjwt">
-                            Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-
                     </div>
                 </div>
             </div>
 
-            <!-- CARD 2 -->
+            <!-- CARD 3 -->
             <div class="cards-project">
                 <div class="content-project">
                     <div class="image-project">
@@ -984,14 +1006,11 @@
                         <a href="https://github.com/EnzoAnthony006/API-REST-Clientes-e-Enderecos" target="_blank">
                             Código <i class="fa-brands fa-github"></i>
                         </a>
-                        <a href="https://github.com/EnzoAnthony006/API-REST-Clientes-e-Enderecos">
-                            Site
-                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- CARD 3 -->
+            <!-- CARD 4 -->
             <div class="cards-project">
                 <div class="content-project">
                     <div class="image-project">
@@ -1005,13 +1024,11 @@
                         <a href="https://github.com/EnzoAnthony006/Biblioteca.git" target="_blank">
                             Código <i class="fa-brands fa-github"></i>
                         </a>
-                        <a href="https://github.com/EnzoAnthony006/Biblioteca.git">
-                            Site
-                        </a>
                     </div>
                 </div>
             </div>
-            <!-- CARD 4 -->
+
+            <!-- CARD 5 -->
             <div class="cards-project">
                 <div class="content-project">
                     <div class="image-project">
@@ -1025,20 +1042,14 @@
                         <a href="https://github.com/EnzoAnthony006/Estacionamento.git" target="_blank">
                             Código <i class="fa-brands fa-github"></i>
                         </a>
-                        <a href="https://github.com/EnzoAnthony006/Estacionamento.git" target="_blank">
-                            Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <button class="carousel-btn next">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
-
-    </div>
 
     </div>
 </section>
@@ -1148,6 +1159,27 @@
             </div>
         </div>
 
+        <div class="cert-card">
+            <div class="cert-badge">✦</div>
+            <div class="cert-card-top">
+                <img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
+                <div class="cert-meta">
+                    <span class="cert-issuer">Amazon Web Services</span>
+                    <span class="cert-date">2025</span>
+                </div>
+            </div>
+            <div class="cert-name">AWS Technical Essentials</div>
+            <div class="cert-desc">Fundamentos técnicos da AWS: serviços de computação, armazenamento, banco de dados, redes e segurança na nuvem.</div>
+            <div class="cert-tags">
+                <span class="cert-tag orange">EC2</span>
+                <span class="cert-tag orange">IAM</span>
+                <span class="cert-tag">VPC</span>
+                <span class="cert-tag">S3</span>
+                <span class="cert-tag">RDS</span>
+            </div>
+        </div>
+        </div>
+
     </div>
 </section>
 
@@ -1185,62 +1217,45 @@
     const track = document.querySelector(".carousel-track");
     const nextBtn = document.querySelector(".next");
     const prevBtn = document.querySelector(".prev");
+    const cards = document.querySelectorAll(".cards-project");
 
-    let cards = document.querySelectorAll(".cards-project");
-    let index = 1;
+    let index = 0;
+    const total = cards.length;
 
-    const cardWidth = cards[0].offsetWidth + 32;
+    function getCardWidth() {
+        return cards[0].offsetWidth + 32;
+    }
 
-
-    const firstClone = cards[0].cloneNode(true);
-    const lastClone = cards[cards.length - 1].cloneNode(true);
-
-    track.appendChild(firstClone);
-    track.insertBefore(lastClone, cards[0]);
-
-    cards = document.querySelectorAll(".cards-project");
-
-    // Começa no primeiro real
-    track.style.transform = `translateX(-${cardWidth}px)`;
-
+    function updateCarousel() {
+        track.style.transition = "transform 0.5s ease-in-out";
+        track.style.transform = `translateX(-${index * getCardWidth()}px)`;
+    }
 
     nextBtn.addEventListener("click", () => {
-      if (index >= cards.length - 1) return;
-      index++;
-      track.style.transition = "transform 0.5s ease-in-out";
-      track.style.transform = `translateX(-${index * cardWidth}px)`;
+        if (index < total - 1) {
+            index++;
+        } else {
+            index = 0;
+        }
+        updateCarousel();
     });
-
 
     prevBtn.addEventListener("click", () => {
-      if (index <= 0) return;
-      index--;
-      track.style.transition = "transform 0.5s ease-in-out";
-      track.style.transform = `translateX(-${index * cardWidth}px)`;
-    });
-
-
-    track.addEventListener("transitionend", () => {
-      if (cards[index].isEqualNode(firstClone)) {
-        track.style.transition = "none";
-        index = 1;
-        track.style.transform = `translateX(-${cardWidth}px)`;
-      }
-
-      if (cards[index].isEqualNode(lastClone)) {
-        track.style.transition = "none";
-        index = cards.length - 2;
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
-      }
+        if (index > 0) {
+            index--;
+        } else {
+            index = total - 1;
+        }
+        updateCarousel();
     });
 
     const certObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-    });
-}, { threshold: 0.15 });
-document.querySelectorAll('.cert-card').forEach(card => certObserver.observe(card));
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('show');
+        });
+    }, { threshold: 0.15 });
 
+    document.querySelectorAll('.cert-card').forEach(card => certObserver.observe(card));
 </script>
 
 <style>
