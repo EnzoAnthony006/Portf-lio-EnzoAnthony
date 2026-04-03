@@ -844,6 +844,38 @@
 .next { right: 10px; }
 
 
+        * {
+    cursor: none;
+}
+
+.cursor {
+    width: 12px;
+    height: 12px;
+    background: var(--orange);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
+
+.cursor-follower {
+    width: 35px;
+    height: 35px;
+    border: 2px solid var(--accent-header);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+}
+
+a:hover ~ .cursor-follower,
+button:hover ~ .cursor-follower {
+    width: 50px;
+    height: 50px;
+    border-color: var(--orange);
+}
 
 
 
@@ -853,6 +885,11 @@
     </style>
 </head>
 <body>
+
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+
 <section id="header">
     <a class="header-title" href="">
         <h1>
@@ -963,7 +1000,7 @@
             </p>
 
             <div class="button-cta">
-                <a href="assets/img/Enzo_Anthony_CV.pdfgi" download>
+                <a href="assets/img/Enzo_Anthony_CV.pdf" download>
                     <button class="show">Download CV</button>
                 </a>
             </div>
@@ -1302,6 +1339,39 @@
     }, { threshold: 0.15 });
 
     document.querySelectorAll('.cert-card').forEach(card => certObserver.observe(card));
+
+const cursor = document.querySelector('.cursor');
+const follower = document.querySelector('.cursor-follower');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX - 6 + 'px';
+    cursor.style.top = e.clientY - 6 + 'px';
+    follower.style.left = e.clientX - 17 + 'px';
+    follower.style.top = e.clientY - 17 + 'px';
+});
+
+document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        follower.style.width = '50px';
+        follower.style.height = '50px';
+        follower.style.borderColor = 'var(--orange)';
+        cursor.style.transform = 'scale(1.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+        follower.style.width = '35px';
+        follower.style.height = '35px';
+        follower.style.borderColor = 'var(--accent-header)';
+        cursor.style.transform = 'scale(1)';
+    });
+});
+
+    const otherSide = document.getElementById('other-side');
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    otherSide.style.backgroundPositionY = `calc(center + ${scrollY * 0.3}px)`;
+});
+
 </script>
 
 <style>
