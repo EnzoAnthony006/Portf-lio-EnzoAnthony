@@ -799,7 +799,7 @@
     color: #FF6F3C;
     border-color: rgba(255,111,60,0.3);
 }
-       .carousel-container {
+.carousel-container {
   position: relative;
   width: 100%;
   max-width: 1100px;
@@ -811,10 +811,37 @@
   display: flex;
   gap: 2rem;
   transition: transform 0.5s ease-in-out;
-  width: max-content;
 }
 
+.cards-project {
+  min-width: 320px;
+  flex-shrink: 0;
+}
 
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #7C3AED, #ff9a3c);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: linear-gradient(45deg, #7C3AED, #ff9a3c);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
 
 
 
@@ -949,6 +976,7 @@
         <h2>PROJETOS 🛠️</h2>
     </div>
 
+
     <div class="carousel-container">
 
         <button class="carousel-btn prev">
@@ -957,6 +985,24 @@
 
         <div class="carousel-track">
             <!-- CARD 1 -->
+            <div class="cards-project">
+                <div class="content-project">
+                    <div class="image-project">
+                        <img src="assets/img/Process de encurtamento de URL.png" alt="img-jwt">
+                    </div>
+                    <span>URL Shortener API — Spring Boot + Redis + JWT + Docker</span>
+                    <p>
+                        API REST para encurtamento de URLs com autenticação JWT, controle de acesso, cache com Redis e containerização com Docker
+                    </p>
+                    <div class="cta-project">
+                        <a href="https://github.com/EnzoAnthony006/url.shortener" target="_blank">
+                            Código <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
             <div class="cards-project">
                 <div class="content-project">
                     <div class="image-project">
@@ -974,7 +1020,7 @@
                 </div>
             </div>
 
-            <!-- CARD 2 -->
+            <!-- CARD 3 -->
             <div class="cards-project">
                 <div class="content-project">
                     <div class="image-project">
@@ -992,7 +1038,7 @@
                 </div>
             </div>
 
-            <!-- CARD 3 -->
+            <!-- CARD 4 -->
             <div class="cards-project">
                 <div class="content-project">
                     <div class="image-project">
@@ -1010,7 +1056,7 @@
                 </div>
             </div>
 
-            <!-- CARD 4 -->
+            <!-- CARD 5 -->
             <div class="cards-project">
                 <div class="content-project">
                     <div class="image-project">
@@ -1028,7 +1074,7 @@
                 </div>
             </div>
 
-            <!-- CARD 5 -->
+            <!-- CARD 6 -->
             <div class="cards-project">
                 <div class="content-project">
                     <div class="image-project">
