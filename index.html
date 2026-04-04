@@ -127,6 +127,7 @@
           opacity: 0;
           animation: fadeUp 0.8s ease forwards;
           animation-delay: 3.1s;
+
         }
         .stacks-content h3 {
           font-size: 2rem;
@@ -877,6 +878,33 @@ button:hover ~ .cursor-follower {
     border-color: var(--orange);
 }
 
+        .counters {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 4.5s;
+    width: 100%;
+}
+
+.counter-item {
+    text-align: center;
+}
+
+.counter-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--orange);
+    display: block;
+}
+
+.counter-item p {
+    font-size: 1.2rem;
+    color: #cfcfff;
+    margin-top: 0.3rem;
+}
 
 
 
@@ -909,7 +937,8 @@ button:hover ~ .cursor-follower {
 
 
 
-<section id="person">
+Aqui está a seção #person completa e corrigida:
+html<section id="person">
     <div class="person-content">
         <div class="person-name">
             <h1 class="reveal"><span>Olá,</span></h1>
@@ -953,12 +982,27 @@ button:hover ~ .cursor-follower {
                 </div>
             </div>
         </div>
+
+        <div class="counters">
+            <div class="counter-item">
+                <span class="counter-number" data-target="6">0</span>
+                <p>Projetos</p>
+            </div>
+            <div class="counter-item">
+                <span class="counter-number" data-target="3">0</span>
+                <p>Badges AWS</p>
+            </div>
+            <div class="counter-item">
+                <span class="counter-number" data-target="6">0</span>
+                <p>Meses estudando</p>
+            </div>
+        </div>
+
     </div>
 
     <div id="other-side">
         <div class="wrapper-profile-photo">
             <img src="./assets/img/foto-perfil.jpg">
-
         </div>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/enzo-anthony" target="_blank">
@@ -1371,6 +1415,26 @@ window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     otherSide.style.backgroundPositionY = `calc(center + ${scrollY * 0.3}px)`;
 });
+
+    const counters = document.querySelectorAll('.counter-number');
+
+counters.forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-target'));
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+
+    const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+            counter.textContent = target + '+';
+            clearInterval(timer);
+        } else {
+            counter.textContent = Math.floor(current) + '+';
+        }
+    }, 16);
+});
+
 
 </script>
 
