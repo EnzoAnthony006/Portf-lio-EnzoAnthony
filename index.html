@@ -933,6 +933,16 @@ button:hover ~ .cursor-follower {
     z-index: 1;
 }
 
+        .reveal-title {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-title.show {
+    opacity: 1;
+    transform: translateX(0);
+}
 
 
     </style>
@@ -1083,7 +1093,7 @@ button:hover ~ .cursor-follower {
 
 <section id="projects">
     <div class="projects-tilte">
-        <h2>PROJETOS 🛠️</h2>
+        <h2 class="reveal-title">PROJETOS 🛠️</h2>
     </div>
 
 
@@ -1212,7 +1222,7 @@ button:hover ~ .cursor-follower {
 
 <section id="certifications">
     <div class="certifications-header">
-        <h2>CERTIFICAÇÕES 🏅</h2>
+        <h2 class="reveal-title" >CERTIFICAÇÕES 🏅</h2>
         <p>Formações e credenciais oficiais conquistadas</p>
     </div>
 
@@ -1341,7 +1351,7 @@ button:hover ~ .cursor-follower {
 
 <section id="contacts">
     <div class="contact-title">
-        <h2>Contato 📞</h2>
+        <h2 class="reveal-title">Contato 📞</h2>
     </div>
     <div class="contacts-icons-wrapper">
         <div class="contact-item">
@@ -1510,6 +1520,18 @@ function drawParticles() {
 
 drawParticles();
 
+
+    const titleObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.reveal-title').forEach(title => {
+    titleObserver.observe(title);
+});
 
 </script>
 
