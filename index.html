@@ -596,26 +596,28 @@
   align-items: center;
   gap: 6px;
 }
-        #contacts {
+       #contacts {
     display: flex;
     flex-direction: column;
-    background: var(--dark);
+    align-items: center;
+    background: var(--dark-deep);
     color: var(--white);
-    padding: 2rem;
+    padding: 6rem 4rem;
+    text-align: center;
 }
 
 .contact-title h2 {
     font-size: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .contacts-icons-wrapper {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 2rem;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
 }
-
 .contact-item {
     display: flex;
     align-items: center;
@@ -1003,6 +1005,10 @@ button:hover ~ .cursor-follower {
                 <div class="tech">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
                     <p>GitHub</p>
+                </div>
+                <div class="tech">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
+                    <p>Redis</p>
                 </div>
             </div>
         </div>
