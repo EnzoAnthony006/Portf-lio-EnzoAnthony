@@ -431,6 +431,14 @@
   align-items: center;
   flex-direction: column;
   border-radius: 20px;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cards-project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(143, 99, 255, 0.3);
+  border-color: rgba(143, 99, 255, 0.5);
 }
 
 .cards-project::after {
@@ -906,13 +914,27 @@ button:hover ~ .cursor-follower {
     margin-top: 0.3rem;
 }
 
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
 
+#person, #about, #projects, #certifications, #contacts, #header {
+    position: relative;
+    z-index: 1;
+}
 
 
 
     </style>
 </head>
 <body>
+<canvas id="particles"></canvas>
 
 <div class="cursor"></div>
 <div class="cursor-follower"></div>
@@ -937,8 +959,8 @@ button:hover ~ .cursor-follower {
 
 
 
-Aqui está a seção #person completa e corrigida:
-html<section id="person">
+
+<section id="person">
     <div class="person-content">
         <div class="person-name">
             <h1 class="reveal"><span>Olá,</span></h1>
@@ -1434,6 +1456,52 @@ counters.forEach(counter => {
         }
     }, 16);
 });
+
+    const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+
+const particles = [];
+const count = 120;
+
+for (let i = 0; i < count; i++) {
+    particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 2 + 0.5,
+        speedX: (Math.random() - 0.5) * 0.4,
+        speedY: (Math.random() - 0.5) * 0.4,
+        opacity: Math.random() * 0.5 + 0.1
+    });
+}
+
+function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(143, 99, 255, ${p.opacity + 0.3})`;
+        ctx.fill();
+
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+    });
+
+    requestAnimationFrame(drawParticles);
+}
+
+drawParticles();
 
 
 </script>
