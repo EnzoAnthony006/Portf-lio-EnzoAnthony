@@ -1066,19 +1066,19 @@ button:hover ~ .cursor-follower {
 
     <div class="box-about">
         <div class="section-subtitle">
-            <h2 class="show">Back-End Developer</h2>
-            <p class="about-role show">Java • Spring Boot • AWS</p>
+            <h2>Back-End Developer</h2>
+            <p class="about-role">Java • Spring Boot • AWS</p>
         </div>
 
-        <h3 class="about-title show reveal-title">
+        <h3 class="about-title">
             Perfil Profissional
         </h3>
 
-        <p class="about-description show reveal-title">
+        <p class="about-description">
             Desenvolvedor Backend com foco em Java e Spring Boot. Construo APIs REST com autenticação JWT, cache com Redis, containerização com Docker e cobertura de testes com JUnit 5. Na nuvem, tenho mais de 50 horas de prática em AWS com badges oficiais no Credly. Busco uma oportunidade Jr ou estágio onde possa contribuir com código real desde o primeiro dia.        </p>
 
         <div class="curriculum-row">
-            <p class="about-curriculum reveal-title">
+            <p class="about-curriculum">
                 Abaixo está o meu <span>Currículo</span> para download.
             </p>
 
@@ -1474,7 +1474,7 @@ counters.forEach(counter => {
     }, 16);
 });
 
-    const canvas = document.getElementById('particles');
+   const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
@@ -1490,7 +1490,7 @@ const count = 120;
 
 for (let i = 0; i < count; i++) {
     particles.push({
-        x: Math.random() * canvas.width,
+        x: Math.random() * (canvas.width * 0.5),
         y: Math.random() * canvas.height,
         radius: Math.random() * 2 + 0.5,
         speedX: (Math.random() - 0.5) * 0.4,
@@ -1511,7 +1511,8 @@ function drawParticles() {
         p.x += p.speedX;
         p.y += p.speedY;
 
-        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+        if (p.x < 0) p.speedX *= -1;
+        if (p.x > canvas.width * 0.5) p.speedX *= -1;
         if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
     });
 
@@ -1520,8 +1521,7 @@ function drawParticles() {
 
 drawParticles();
 
-
-    const titleObserver = new IntersectionObserver((entries) => {
+const titleObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
@@ -1531,6 +1531,18 @@ drawParticles();
 
 document.querySelectorAll('.reveal-title').forEach(title => {
     titleObserver.observe(title);
+});
+
+    const aboutObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.about-title, .about-description, .about-curriculum, .about-role, .section-subtitle h2, .button-cta button').forEach(el => {
+    aboutObserver.observe(el);
 });
 
 </script>
