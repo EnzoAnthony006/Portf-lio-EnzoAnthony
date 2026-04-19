@@ -146,35 +146,42 @@
           animation-delay: 3.6s;
         }
         .tech {
-          position: relative;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 0.5rem;
-          cursor: pointer;
-        }
-        .tech img {
-          width: 55px;
-          height: 55px;
-          transition: transform 0.3s ease;
-        }
-        .tech:hover img { transform: scale(1.2); }
-        .tech p {
-          position: absolute;
-          bottom: -2rem;
-          background: var(--orange);
-          padding: 4px 8px;
-          border-radius: 4px;
-          font-size: 1.2rem;
-          color: var(--white);
-          opacity: 0;
-          pointer-events: none;
-          transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        .tech:hover p {
-          opacity: 1;
-          transform: translateY(-10px);
-        }
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.tech img {
+  width: 55px;
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+
+.tech:hover img {
+  transform: scale(1.2);
+}
+
+.tech p {
+  position: absolute;
+  bottom: -2rem;
+  background: var(--orange);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  color: var(--white);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.tech:hover p {
+  opacity: 1;
+  transform: translateY(-10px);
+}
 
         .wrapper-profile-photo {
           width: 260px;
@@ -1622,6 +1629,21 @@ document.querySelectorAll('.about-title, .about-description, .about-curriculum, 
         width: 42px;
         height: 42px;
     }
+    .tech {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.tech p {
+    position: static;
+    opacity: 1;
+    background: transparent;
+    color: #cfcfff;
+    font-size: 1rem;
+    padding: 0;
+    transform: none;
+}
 
     #other-side {
         width: 100%;
