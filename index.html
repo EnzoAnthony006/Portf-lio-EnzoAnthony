@@ -561,29 +561,26 @@
   flex-shrink: 0;
 }
 
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: none;
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 111, 60, 0.4);
+            background: rgba(255, 111, 60, 0.1);
+            color: #fff;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
 
-  background: linear-gradient(135deg, #7C3AED, #ff9a3c);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-
-  color: #fff;
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 10;
-}
-
-.carousel-btn:hover {
-  background: linear-gradient(45deg,#7C3AED,#ff9a3c);
-  transform: translateY(-50%) scale(1.1);
-}
+        .carousel-btn:hover {
+            background: var(--orange);
+            transform: translateY(-50%) scale(1.1);
+        }
 
 .prev {
   left: 10px;
