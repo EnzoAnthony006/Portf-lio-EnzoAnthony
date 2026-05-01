@@ -434,38 +434,38 @@
 
 
 
-.cards-project {
-  width: 320px;
-  height: 450px;
-  padding: 30px 20px 20px;
-  margin: 0px 10px;
-  position: relative;
-  background: var(--white);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 20px;
-  border: 2px solid transparent;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
+        .cards-project {
+            width: 320px;
+            height: auto;
+            min-height: 450px;
+            padding: 30px 20px 20px;
+            margin: 0px 10px;
+            position: relative;
+            background: #111;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 111, 60, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
 
-.cards-project:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(143, 99, 255, 0.3);
-  border-color: rgba(143, 99, 255, 0.5);
-}
+        .cards-project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 111, 60, 0.15);
+            border-color: rgba(255, 111, 60, 0.5);
+        }
 
-.cards-project::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 40%;
-  width: 100%;
-  background: var(--dark-glow);
-  border-radius: 20px 20px 0 0;
-}
-
+        .cards-project::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 40%;
+            width: 100%;
+            background: rgba(255, 111, 60, 0.03);
+            border-radius: 12px 12px 0 0;
+        }
 .content-project {
   height: 100%;
   width: 100%;
