@@ -1172,6 +1172,11 @@ button:hover ~ .cursor-follower {
     transform: translateX(0);
 }
 
+#person {
+    position: relative;
+    overflow: hidden;
+}
+
 #shader-bg {
     position: absolute;
     top: 0;
@@ -1180,6 +1185,7 @@ button:hover ~ .cursor-follower {
     height: 100%;
     z-index: 0;
     display: block;
+    pointer-events: none;
 }
 
 #person .person-content,
