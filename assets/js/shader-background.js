@@ -1,4 +1,5 @@
 
+
 (function () {
     const VERT = `attribute vec2 a_position;
 void main() {
@@ -434,11 +435,9 @@ void main() {
     }
 
     function boot() {
-        const heroCanvas = document.getElementById("shader-bg");
-        if (heroCanvas) initShaderBackground(heroCanvas, DEFAULT_UNIFORMS);
-
-        const aboutCanvas = document.getElementById("shader-bg-about");
-        if (aboutCanvas) initShaderBackground(aboutCanvas, ABOUT_UNIFORMS);
+        // Um único canvas de fundo, fixo, cobrindo a página inteira.
+        const pageCanvas = document.getElementById("shader-bg-page");
+        if (pageCanvas) initShaderBackground(pageCanvas, ABOUT_UNIFORMS);
     }
 
     if (document.readyState === "loading") {
