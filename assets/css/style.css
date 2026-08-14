@@ -1331,8 +1331,8 @@ button:hover ~ .cursor-follower {
 
 /* Shader da seção Sobre (substitui a foto estática do MacBook) */
 #shader-bg-about {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    inset: 0;
     display: block;
 }
 
