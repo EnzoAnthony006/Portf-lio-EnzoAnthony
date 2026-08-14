@@ -170,6 +170,6 @@ const aboutObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.about-title, .about-description, .about-curriculum, .about-role, .section-subtitle h2, .button-cta button, .reveal-scroll').forEach(el => {
+document.querySelectorAll('.about-title, .about-description, .about-curriculum, .about-role, .section-subtitle h2, .button-cta button, .reveal-scroll, .about-timeline').forEach(el => {
     aboutObserver.observe(el);
 });
