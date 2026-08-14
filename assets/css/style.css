@@ -1128,83 +1128,14 @@ button:hover ~ .cursor-follower {
     overflow: hidden;
 }
 
-.bg-aurora {
+#shader-bg-page {
     position: fixed;
     inset: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: -2;
-    overflow: hidden;
-    background: var(--dark);
+    display: block;
     pointer-events: none;
-}
-
-.bg-aurora .blob {
-    position: absolute;
-    width: 48vw;
-    height: 48vw;
-    min-width: 420px;
-    min-height: 420px;
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.5;
-    will-change: transform;
-}
-
-.bg-aurora .blob-1 {
-    top: -12%;
-    left: -10%;
-    background: var(--orange);
-    animation: floatBlob1 24s ease-in-out infinite;
-}
-
-.bg-aurora .blob-2 {
-    top: 35%;
-    right: -18%;
-    background: #ffcf3f;
-    animation: floatBlob2 28s ease-in-out infinite;
-}
-
-.bg-aurora .blob-3 {
-    bottom: -20%;
-    left: 15%;
-    background: #e9137f;
-    opacity: 0.35;
-    animation: floatBlob3 32s ease-in-out infinite;
-}
-
-.bg-aurora .blob-4 {
-    top: 5%;
-    left: 38%;
-    width: 32vw;
-    height: 32vw;
-    min-width: 300px;
-    min-height: 300px;
-    background: #2a2f6b;
-    opacity: 0.4;
-    animation: floatBlob4 26s ease-in-out infinite;
-}
-
-@keyframes floatBlob1 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(8vw, 10vh) scale(1.15); }
-}
-
-@keyframes floatBlob2 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-10vw, 8vh) scale(1.1); }
-}
-
-@keyframes floatBlob3 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(6vw, -12vh) scale(1.2); }
-}
-
-@keyframes floatBlob4 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-6vw, 8vh) scale(1.1); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .bg-aurora .blob { animation: none; }
 }
 
 #person .person-content,

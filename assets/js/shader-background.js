@@ -1,4 +1,7 @@
-
+// shader-background.js
+// Versão vanilla JS (sem React/Next.js) do shader de fundo.
+// Zero dependências: canvas WebGL fixo, cobrindo a página inteira,
+// atrás de todo o conteúdo (um único efeito visual para o site todo).
 
 (function () {
     const VERT = `attribute vec2 a_position;
@@ -311,6 +314,44 @@ void main() {
         timeScale: 0.42,
     };
 
+    // Paleta "Dream" — roxo/azul-violeta com fumaça escura (efeito líquido, tipo o print que você mandou)
+    const DREAM_UNIFORMS = {
+        colors: [
+            [0.55, 0.47, 0.86],
+            [0.42, 0.34, 0.80],
+            [0.35, 0.27, 0.75],
+            [0.24, 0.16, 0.58],
+            [0.18, 0.12, 0.43],
+            [0.08, 0.05, 0.22],
+            [0.03, 0.02, 0.08],
+            [0.02, 0.01, 0.05],
+        ],
+        colorCount: 6,
+        scale: 1.1,
+        intensity: 0.34,
+        paramA: 0.5,
+        warp: 0.42,
+        detail: 1.3,
+        contrast: 1.05,
+        brightness: 0.0,
+        saturation: 1.05,
+        hue: 0.0,
+        vignette: 0.2,
+        blur: 0.03,
+        grain: 0.08,
+        seed: 12.0,
+        rotate: 0.0,
+        offsetX: 0.0,
+        offsetY: 0.0,
+        drift: 0.25,
+        cursorEnabled: false,
+        cursorEffect: 2.0,
+        cursorStrength: 0.65,
+        cursorRadius: 0.297,
+        oklab: 1.0,
+        timeScale: 0.35,
+    };
+
     function initShaderBackground(canvas, overrides) {
         const UNIFORMS = Object.assign({}, DEFAULT_UNIFORMS, overrides || {});
         const gl = canvas.getContext("webgl", { antialias: false });
@@ -437,7 +478,7 @@ void main() {
     function boot() {
         // Um único canvas de fundo, fixo, cobrindo a página inteira.
         const pageCanvas = document.getElementById("shader-bg-page");
-        if (pageCanvas) initShaderBackground(pageCanvas, ABOUT_UNIFORMS);
+        if (pageCanvas) initShaderBackground(pageCanvas, DREAM_UNIFORMS);
     }
 
     if (document.readyState === "loading") {
