@@ -1,8 +1,3 @@
-// shader-background.js
-// Versão vanilla JS (sem React/Next.js) do shader de fundo.
-// Zero dependências: canvas WebGL que preenche o elemento pai.
-// Suporta múltiplas instâncias na mesma página (ex.: hero + seção Sobre),
-// cada uma com sua própria paleta de cores.
 
 (function () {
     const VERT = `attribute vec2 a_position;
