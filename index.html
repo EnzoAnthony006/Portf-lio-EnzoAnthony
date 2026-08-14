@@ -61,6 +61,10 @@
                     <p>Spring Boot</p>
                 </div>
                 <div class="tech">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" alt="Kafka">
+                    <p>Kafka</p>
+                </div>
+                <div class="tech">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
                     <p>MySQL</p>
                 </div>
@@ -93,7 +97,7 @@
 
         <div class="counters">
             <div class="counter-item">
-                <span class="counter-number" data-target="7">0</span>
+                <span class="counter-number" data-target="8">0</span>
                 <p>Projetos</p>
             </div>
             <div class="counter-item">
@@ -101,7 +105,7 @@
                 <p>Badges AWS</p>
             </div>
             <div class="counter-item">
-                <span class="counter-number" data-target="5">0</span>
+                <span class="counter-number" data-target="7">0</span>
                 <p>Certificações</p>
             </div>
         </div>
@@ -196,6 +200,31 @@
                     </div>
                 </div>
             </div>
+
+            <!-- CARD NOVO: payment-gateway-service -->
+            <div class="cards-project">
+                <div class="content-project">
+                    <div class="image-project">
+                        <img src="assets/img/payment-gateway.png" alt="payment-gateway-service">
+                    </div>
+                    <span>Payment Gateway Service — Resiliência + Observabilidade</span>
+                    <p>
+                        Gateway de pagamentos simulado com Spring Boot, pensado pra reproduzir desafios reais: idempotência (mesma requisição não gera cobrança duplicada), Circuit Breaker e Retry com Resilience4j pra lidar com falhas do provedor externo, mensageria assíncrona com RabbitMQ, observabilidade com Prometheus e Grafana, e testes de integração com Testcontainers rodando automaticamente no CI via GitHub Actions.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag orange">Resilience4j</span>
+                        <span class="project-tag orange">RabbitMQ</span>
+                        <span class="project-tag">Testcontainers</span>
+                        <span class="project-tag">CI/CD</span>
+                    </div>
+                    <div class="cta-project">
+                        <a href="https://github.com/EnzoAnthony006/payment-gateway-service" target="_blank">
+                            Código <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- CARD 2 -->
             <div class="cards-project">
                 <div class="content-project">
@@ -206,6 +235,12 @@
                     <p>
                         API REST para encurtamento de URLs com autenticação JWT stateless. Cache com Redis evita consulta repetida ao banco a cada redirecionamento. Containerização com Docker.
                     </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Spring Boot</span>
+                        <span class="project-tag orange">Redis</span>
+                        <span class="project-tag">JWT</span>
+                        <span class="project-tag orange">Docker</span>
+                    </div>
                     <div class="cta-project">
                         <a href="https://github.com/EnzoAnthony006/url-shortener" target="_blank">
                             Código <i class="fa-brands fa-github"></i>
@@ -224,6 +259,11 @@
                     <p>
                         API REST para gerenciamento acadêmico com autenticação JWT e 3 níveis de acesso (ADMIN, ALUNO, PROFESSOR). Frontend integrado com login e rotas protegidas.
                     </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Spring Boot</span>
+                        <span class="project-tag orange">JWT</span>
+                        <span class="project-tag">RBAC</span>
+                    </div>
                     <div class="cta-project">
                         <a href="https://github.com/EnzoAnthony006/gestao-academica-api" target="_blank">
                             Código <i class="fa-brands fa-github"></i>
@@ -242,6 +282,11 @@
                     <p>
                         API REST com autenticação JWT, autorização por roles (USER/MANAGER) e arquitetura em camadas, aplicando Spring Security, JPA e MySQL.
                     </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Spring Security</span>
+                        <span class="project-tag orange">JWT</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
                     <div class="cta-project">
                         <a href="https://github.com/EnzoAnthony006/spring-securityjwt" target="_blank">
                             Código <i class="fa-brands fa-github"></i>
@@ -260,6 +305,11 @@
                     <p>
                         API estruturada com Spring Boot, modelagem relacional e integração com ViaCEP para enriquecimento automático de dados.
                     </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Spring Boot</span>
+                        <span class="project-tag orange">API Externa</span>
+                        <span class="project-tag">REST</span>
+                    </div>
                     <div class="cta-project">
                         <a href="https://github.com/EnzoAnthony006/API-REST-Clientes-e-Enderecos" target="_blank">
                             Código <i class="fa-brands fa-github"></i>
@@ -278,6 +328,11 @@
                     <p>
                         Sistema backend em Java com MVC, JDBC e MySQL, incluindo controle de empréstimos e validações de regras de negócio.
                     </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag orange">JDBC</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
                     <div class="cta-project">
                         <a href="https://github.com/EnzoAnthony006/Biblioteca.git" target="_blank">
                             Código <i class="fa-brands fa-github"></i>
@@ -296,6 +351,10 @@
                     <p>
                         Aplicação em Java com arquitetura em camadas para controle de veículos, cálculo automático de permanência e faturamento.
                     </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag orange">Arquitetura em Camadas</span>
+                    </div>
                     <div class="cta-project">
                         <a href="https://github.com/EnzoAnthony006/Estacionamento.git" target="_blank">
                             Código <i class="fa-brands fa-github"></i>
