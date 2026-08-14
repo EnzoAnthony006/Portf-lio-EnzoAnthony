@@ -1,3 +1,8 @@
+// shader-background.js
+// Versão vanilla JS (sem React/Next.js) do shader de fundo.
+// Zero dependências: canvas WebGL que preenche o elemento pai.
+// Suporta múltiplas instâncias na mesma página (ex.: hero + seção Sobre),
+// cada uma com sua própria paleta de cores.
 
 (function () {
     const VERT = `attribute vec2 a_position;
@@ -234,7 +239,8 @@ void main() {
 }
 `;
 
-    const UNIFORMS = {
+    // Paleta padrão (usada no hero) — tons escuros + laranja da identidade visual
+    const DEFAULT_UNIFORMS = {
         colors: [
             [0.04, 0.04, 0.04],
             [0.10, 0.10, 0.10],
@@ -271,7 +277,46 @@ void main() {
         timeScale: 0.594,
     };
 
-    function initShaderBackground(canvas) {
+    // Paleta "Sobre" — laranja, dourado e rosa/magenta (inspirada no GrainGradient)
+    const ABOUT_UNIFORMS = {
+        colors: [
+            [0.05, 0.02, 0.02],
+            [0.14, 0.05, 0.04],
+            [0.22, 0.07, 0.06],
+            [1.0, 0.34, 0.14],
+            [1.0, 0.76, 0.02],
+            [0.91, 0.13, 0.39],
+            [0.10, 0.03, 0.04],
+            [0.06, 0.02, 0.02],
+        ],
+        colorCount: 6,
+        scale: 1.6,
+        intensity: 0.58,
+        paramA: 0.5,
+        warp: 0.15,
+        detail: 2.2,
+        contrast: 0.95,
+        brightness: -0.05,
+        saturation: 1.1,
+        hue: 0.0,
+        vignette: 0.5,
+        blur: 0.02,
+        grain: 0.15,
+        seed: 21.0,
+        rotate: 0.0,
+        offsetX: 0.0,
+        offsetY: 0.0,
+        drift: 0.22,
+        cursorEnabled: false,
+        cursorEffect: 2.0,
+        cursorStrength: 0.65,
+        cursorRadius: 0.297,
+        oklab: 0.0,
+        timeScale: 0.42,
+    };
+
+    function initShaderBackground(canvas, overrides) {
+        const UNIFORMS = Object.assign({}, DEFAULT_UNIFORMS, overrides || {});
         const gl = canvas.getContext("webgl", { antialias: false });
         if (!gl) return;
 
@@ -323,7 +368,7 @@ void main() {
 
         let mouseX = 0, mouseY = 0;
         let bounds = canvas.getBoundingClientRect();
-        let raf = 0, lastNow = null;
+        let raf = 0;
         let visible = document.visibilityState === "visible";
         let inView = true;
         const start = performance.now();
@@ -364,7 +409,6 @@ void main() {
             else if (raf !== 0) {
                 cancelAnimationFrame(raf);
                 raf = 0;
-                lastNow = null;
             }
         });
         intersectionObserver.observe(canvas);
@@ -375,14 +419,12 @@ void main() {
             else if (raf !== 0) {
                 cancelAnimationFrame(raf);
                 raf = 0;
-                lastNow = null;
             }
         });
 
         function render(now) {
             raf = 0;
             if (!visible || !inView) return;
-            lastNow = now;
             resizeCanvas();
             const width = canvas.width;
             const height = canvas.height;
@@ -397,8 +439,11 @@ void main() {
     }
 
     function boot() {
-        const canvas = document.getElementById("shader-bg");
-        if (canvas) initShaderBackground(canvas);
+        const heroCanvas = document.getElementById("shader-bg");
+        if (heroCanvas) initShaderBackground(heroCanvas, DEFAULT_UNIFORMS);
+
+        const aboutCanvas = document.getElementById("shader-bg-about");
+        if (aboutCanvas) initShaderBackground(aboutCanvas, ABOUT_UNIFORMS);
     }
 
     if (document.readyState === "loading") {
