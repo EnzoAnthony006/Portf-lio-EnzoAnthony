@@ -1315,8 +1315,13 @@ button:hover ~ .cursor-follower {
 }
 
 
-#shader-demo {
-    padding: 0;
+#shader-widget-root {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    pointer-events: none;
 }
 
 .shader-demo-box {
