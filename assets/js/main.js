@@ -34,6 +34,32 @@ prevBtn.addEventListener("click", () => {
     updateCarousel();
 });
 
+// Inclinação 3D dos cards de projeto, seguindo o mouse (além da flutuação
+// contínua feita em CSS). Pausa a animação de flutuação enquanto o mouse
+// está em cima pra não competir com a inclinação, e volta ao normal ao sair.
+cards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+        card.style.animationPlayState = "paused";
+    });
+
+    card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((centerY - y) / centerY) * 7;
+        const rotateY = ((x - centerX) / centerX) * 7;
+        card.style.transform =
+            `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.03)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
+        card.style.animationPlayState = "running";
+    });
+});
+
 const certObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('show');

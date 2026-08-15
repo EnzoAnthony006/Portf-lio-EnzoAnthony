@@ -1126,8 +1126,31 @@ button:hover ~ .cursor-follower {
 
 /* ===== Modernização: cards de projeto mais vivos ===== */
 
+@keyframes cardFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
 .cards-project {
     overflow: hidden;
+    animation: cardFloat 6s ease-in-out infinite;
+    will-change: transform;
+}
+
+/* Atraso negativo faz cada card já nascer em um ponto diferente do ciclo,
+   então eles não sobem/descem todos juntos — fica mais orgânico. */
+.cards-project:nth-child(2n) {
+    animation-duration: 7s;
+    animation-delay: -2.3s;
+}
+
+.cards-project:nth-child(3n) {
+    animation-duration: 6.5s;
+    animation-delay: -4.1s;
+}
+
+.cards-project:nth-child(4n) {
+    animation-delay: -1.2s;
 }
 
 .cards-project::before {
@@ -1158,9 +1181,18 @@ button:hover ~ .cursor-follower {
 }
 
 /* Selo "Projeto em destaque" */
+@keyframes featuredPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 1px rgba(255, 111, 60, 0.15), 0 20px 45px rgba(255, 111, 60, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 0 1px rgba(255, 111, 60, 0.4), 0 20px 55px rgba(255, 111, 60, 0.28);
+    }
+}
+
 .cards-project.featured {
     border-color: rgba(255, 111, 60, 0.45);
-    box-shadow: 0 0 0 1px rgba(255, 111, 60, 0.15), 0 20px 45px rgba(255, 111, 60, 0.1);
+    animation: cardFloat 6s ease-in-out infinite, featuredPulse 2.6s ease-in-out infinite;
 }
 
 .featured-badge {
