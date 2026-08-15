@@ -255,7 +255,7 @@
         contrast: 0.924,
         brightness: -0.500,
         saturation: 1.000,
-        hue: 3.0369,
+        hue: 0.0,
         vignette: 0.610,
         blur: 0.0160,
         grain: 0.350,
