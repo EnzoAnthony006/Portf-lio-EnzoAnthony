@@ -583,6 +583,40 @@
 
 <script src="assets/js/shader-background.js"></script>
 <script src="assets/js/main.js"></script>
-<script src="assets/js/shader-widget.iife.js" defer></script>
+
+<script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.3.1",
+        "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+        "@paper-design/shaders-react": "https://esm.sh/@paper-design/shaders-react@0.0.80?external=react,react-dom"
+      }
+    }
+</script>
+<script type="module">
+    import { createElement } from "react";
+    import { createRoot } from "react-dom/client";
+    import { GrainGradient } from "@paper-design/shaders-react";
+
+    const container = document.getElementById("shader-widget-root");
+    if (container) {
+        createRoot(container).render(
+            createElement(GrainGradient, {
+                style: { height: "100%", width: "100%" },
+                colorBack: "hsl(0, 0%, 0%)",
+                softness: 0.76,
+                intensity: 0.45,
+                noise: 0,
+                shape: "corners",
+                offsetX: 0,
+                offsetY: 0,
+                scale: 1,
+                rotation: 0,
+                speed: 1,
+                colors: ["hsl(14, 100%, 57%)", "hsl(45, 100%, 51%)", "hsl(340, 82%, 52%)"],
+            })
+        );
+    }
+</script>
 </body>
 </html>
