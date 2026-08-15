@@ -1313,3 +1313,53 @@ button:hover ~ .cursor-follower {
     flex-wrap: wrap;
     gap: 0.6rem;
 }
+
+
+#shader-demo {
+    padding: 4rem 3rem 2rem;
+}
+
+.shader-demo-box {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 340px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 111, 60, 0.25);
+}
+
+#shader-widget-root {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.shader-demo-caption {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+.shader-demo-caption h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--white);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.shader-demo-tag {
+    display: inline-block;
+    margin-top: 4rem;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    width: 100%;
+}
