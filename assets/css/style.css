@@ -736,7 +736,7 @@ body { font-family: 'Poppins', sans-serif; }
 }
 #certifications {
     width: 100%;
-    background: var(--dark-deep);
+    background: rgba(15, 15, 15, 0.55);
     padding: 6rem 4rem;
     color: var(--white);
     position: relative;
@@ -861,7 +861,7 @@ button:hover ~ .cursor-follower {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
 }
 
 #person, #about, #projects, #certifications, #contacts, #header {
@@ -1128,16 +1128,6 @@ button:hover ~ .cursor-follower {
     overflow: hidden;
 }
 
-#shader-bg-page {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -2;
-    display: block;
-    pointer-events: none;
-}
-
 #person .person-content,
 #person #other-side {
     position: relative;
@@ -1314,26 +1304,54 @@ button:hover ~ .cursor-follower {
     gap: 0.6rem;
 }
 
-
-#shader-widget-root {
+/* Shader "Plasma" (canvas WebGL puro, sem React/build) — fundo fixo do site
+   inteiro, igual ao #particles: fica atrás de tudo e aparece por trás das
+   seções que têm fundo semi-transparente. */
+#shader-plasma-bg {
     position: fixed;
     inset: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -2;
+    z-index: 0;
+    display: block;
     pointer-events: none;
 }
 
-.shader-demo-box {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    min-height: 420px;
-    overflow: hidden;
+/* Mini bloco "empresa / período" dentro de Experiência Atual */
+.current-role-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    background: rgba(255, 111, 60, 0.08);
+    border: 1px solid rgba(255, 111, 60, 0.35);
+    border-radius: 10px;
+    padding: 0.55rem 1.1rem;
+    margin: 0.6rem 0 1.1rem;
 }
 
-#shader-widget-root {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+.current-role-badge-company {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.02rem;
+}
+
+.current-role-badge-period {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--orange);
+    padding-left: 0.9rem;
+    border-left: 1px solid rgba(255, 111, 60, 0.35);
+}
+
+@media (max-width: 768px) {
+    .current-role-badge {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    .current-role-badge-period {
+        padding-left: 0;
+        border-left: none;
+    }
 }
