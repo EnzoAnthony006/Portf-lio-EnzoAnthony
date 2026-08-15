@@ -854,16 +854,6 @@ button:hover ~ .cursor-follower {
     margin-top: 0.3rem;
 }
 
-#particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-}
-
 #person, #about, #projects, #certifications, #contacts, #header {
     position: relative;
     z-index: 1;
@@ -1305,8 +1295,8 @@ button:hover ~ .cursor-follower {
 }
 
 /* Shader "Plasma" (canvas WebGL puro, sem React/build) — fundo fixo do site
-   inteiro, igual ao #particles: fica atrás de tudo e aparece por trás das
-   seções que têm fundo semi-transparente. */
+   inteiro, fica atrás de tudo e aparece por trás das seções que têm fundo
+   semi-transparente. */
 #shader-plasma-bg {
     position: fixed;
     inset: 0;
