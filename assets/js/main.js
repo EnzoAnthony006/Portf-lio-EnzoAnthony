@@ -103,53 +103,6 @@ document.querySelectorAll('.counter-number').forEach(counter => {
     counterObserver.observe(counter);
 });
 
-const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
-
-const particles = [];
-const count = 120;
-
-for (let i = 0; i < count; i++) {
-    particles.push({
-        x: Math.random() * (canvas.width * 0.5),
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 2 + 0.5,
-        speedX: (Math.random() - 0.5) * 0.4,
-        speedY: (Math.random() - 0.5) * 0.4,
-        opacity: Math.random() * 0.5 + 0.1
-    });
-}
-
-function drawParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 111, 60, ${p.opacity + 0.3})`;
-        ctx.fill();
-
-        p.x += p.speedX;
-        p.y += p.speedY;
-
-        if (p.x < 0) p.speedX *= -1;
-        if (p.x > canvas.width * 0.5) p.speedX *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-    });
-
-    requestAnimationFrame(drawParticles);
-}
-
-drawParticles();
-
 const titleObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
