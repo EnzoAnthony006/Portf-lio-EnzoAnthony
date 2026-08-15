@@ -745,11 +745,19 @@ body { font-family: 'Poppins', sans-serif; }
 }
 .certifications-header { text-align: center; margin-bottom: 5rem; }
 .certifications-header h2 { font-size: 2.4rem; font-weight: 600; color: var(--white); letter-spacing: 0.15rem; text-transform: uppercase; }
-.certifications-header p { font-size: 1.4rem; color: #cfcfff; margin-top: 0.8rem; }
-.certifications-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.4rem; max-width: 1100px; margin: 0 auto; }
-.certifications-header { text-align: center; margin-bottom: 5rem; }
-.certifications-header h2 { font-size: 2.4rem; font-weight: 600; color: var(--white); letter-spacing: 0.15rem; text-transform: uppercase; }
 .certifications-header p { font-size: 1.4rem; color: rgba(255,255,255,0.4); margin-top: 0.8rem; }
+.certifications-disclaimer {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 0.6rem 1.2rem;
+    max-width: 560px;
+    font-size: 1.15rem;
+    line-height: 1.6rem;
+    color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
 .certifications-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.4rem; max-width: 1100px; margin: 0 auto; }
 .cert-card { background: #111; border: 1px solid rgba(255,111,60,0.15); border-radius: 16px; padding: 2.8rem 2.4rem; display: flex; flex-direction: column; gap: 1.4rem; position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; opacity: 0; transform: translateY(30px); }
 .cert-card.show { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -852,6 +860,16 @@ button:hover ~ .cursor-follower {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.5);
     margin-top: 0.3rem;
+}
+
+.counters-disclaimer {
+    text-align: center;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 1.4rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 3.6s;
 }
 
 #person, #about, #projects, #certifications, #contacts, #header {
