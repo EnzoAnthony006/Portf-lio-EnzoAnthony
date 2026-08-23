@@ -381,11 +381,13 @@ body { font-family: 'Poppins', sans-serif; }
 .projects-tilte h2 {
     margin: 2rem 3rem;
     padding: 0;
-    font-size: 2.4rem;
-    font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 1.2;
     color: var(--white);
-    letter-spacing: 0.15rem;
-    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    text-transform: none;
 }
 
 
@@ -457,8 +459,10 @@ body { font-family: 'Poppins', sans-serif; }
 
 .content-project span {
     color: var(--white);
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.55rem;
+    letter-spacing: -0.01em;
     margin: 0.75rem auto 0.5rem auto;
     text-align: center;
 }
@@ -783,6 +787,7 @@ body { font-family: 'Poppins', sans-serif; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0.75rem 0; }
 
 .project-tag {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1rem;
     padding: 2px 8px;
     border-radius: 20px;
@@ -1031,7 +1036,7 @@ button:hover ~ .cursor-follower {
 
     .projects-tilte h2 {
         margin: 1rem 0.5rem;
-        font-size: 2rem;
+        font-size: 2.6rem;
     }
 
     .carousel-container {
@@ -1142,7 +1147,6 @@ button:hover ~ .cursor-follower {
     z-index: 1;
 }
 
-/* ===== Modernização: cards de projeto mais vivos ===== */
 
 @keyframes cardFloat {
     0%, 100% { transform: translateY(0); }
@@ -1155,8 +1159,7 @@ button:hover ~ .cursor-follower {
     will-change: transform;
 }
 
-/* Atraso negativo faz cada card já nascer em um ponto diferente do ciclo,
-   então eles não sobem/descem todos juntos — fica mais orgânico. */
+
 .cards-project:nth-child(2n) {
     animation-duration: 7s;
     animation-delay: -2.3s;
@@ -1198,7 +1201,6 @@ button:hover ~ .cursor-follower {
     transform: translateY(-10px) scale(1.015);
 }
 
-/* Selo "Projeto em destaque" */
 @keyframes featuredPulse {
     0%, 100% {
         box-shadow: 0 0 0 1px rgba(255, 111, 60, 0.15), 0 20px 45px rgba(255, 111, 60, 0.1);
@@ -1229,7 +1231,7 @@ button:hover ~ .cursor-follower {
     z-index: 3;
 }
 
-/* Tags de projeto/certificação com indicador vivo */
+
 .project-tag, .cert-tag {
     position: relative;
     padding-left: 1.6rem;
@@ -1254,7 +1256,7 @@ button:hover ~ .cursor-follower {
     border-color: rgba(255, 111, 60, 0.6);
 }
 
-/* ===== Modernização: timeline na seção Sobre ===== */
+
 
 .about-timeline {
     display: flex;
@@ -1314,8 +1316,7 @@ button:hover ~ .cursor-follower {
     }
 }
 
-/* Shader da seção Sobre (substitui a foto estática do MacBook) */
-/* Bloco "Experiência Atual" */
+
 .current-role {
     margin-top: 2.5rem;
     padding-top: 2rem;
@@ -1344,9 +1345,7 @@ button:hover ~ .cursor-follower {
     gap: 0.6rem;
 }
 
-/* Shader "Plasma" (canvas WebGL puro, sem React/build) — fundo fixo do site
-   inteiro, fica atrás de tudo e aparece por trás das seções que têm fundo
-   semi-transparente. */
+
 #shader-plasma-bg {
     position: fixed;
     inset: 0;
@@ -1357,7 +1356,7 @@ button:hover ~ .cursor-follower {
     pointer-events: none;
 }
 
-/* Mini bloco "empresa / período" dentro de Experiência Atual */
+
 .current-role-badge {
     display: inline-flex;
     align-items: center;
