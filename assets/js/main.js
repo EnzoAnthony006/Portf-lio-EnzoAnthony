@@ -1,45 +1,51 @@
 const track = document.querySelector(".carousel-track");
+const viewport = document.querySelector(".carousel-overflow") || track.parentElement;
 const nextBtn = document.querySelector(".next");
 const prevBtn = document.querySelector(".prev");
 const cards = document.querySelectorAll(".cards-project");
 
 let index = 0;
-const total = cards.length;
 
-function getCardWidth() {
-    const gap = parseFloat(getComputedStyle(track).gap);
-    return cards[0].offsetWidth + gap;
+function getStep() {
+    if (cards.length > 1) {
+        return cards[1].offsetLeft - cards[0].offsetLeft;
+    }
+    return cards[0].offsetWidth;
+}
+
+function getMaxScroll() {
+    return Math.max(0, track.scrollWidth - viewport.clientWidth);
+}
+
+function getMaxIndex() {
+    const step = getStep();
+    return step > 0 ? Math.ceil(getMaxScroll() / step) : 0;
 }
 
 function updateCarousel() {
+    const offset = Math.min(index * getStep(), getMaxScroll());
     track.style.transition = "transform 0.5s ease-in-out";
-    track.style.transform = `translateX(-${index * getCardWidth()}px)`;
+    track.style.transform = `translateX(-${offset}px)`;
 }
 
 nextBtn.addEventListener("click", () => {
-    if (index < total - 1) {
-        index++;
-    } else {
-        index = 0;
-    }
+    index = index < getMaxIndex() ? index + 1 : 0;
     updateCarousel();
 });
 
 prevBtn.addEventListener("click", () => {
-    if (index > 0) {
-        index--;
-    } else {
-        index = total - 1;
-    }
+    index = index > 0 ? index - 1 : getMaxIndex();
     updateCarousel();
 });
 
-// Inclinação 3D dos cards de projeto, seguindo o mouse (além da flutuação
-// contínua feita em CSS). Pausa a animação de flutuação enquanto o mouse
-// está em cima pra não competir com a inclinação, e volta ao normal ao sair.
+window.addEventListener("resize", () => {
+    index = Math.min(index, getMaxIndex());
+    updateCarousel();
+});
+
 cards.forEach(card => {
     card.addEventListener("mouseenter", () => {
-        card.style.animationPlayState = "paused";
+        card.style.animation = "none";
     });
 
     card.addEventListener("mousemove", (e) => {
@@ -56,7 +62,7 @@ cards.forEach(card => {
 
     card.addEventListener("mouseleave", () => {
         card.style.transform = "";
-        card.style.animationPlayState = "running";
+        card.style.animation = "";
     });
 });
 
@@ -71,36 +77,29 @@ document.querySelectorAll('.cert-card').forEach(card => certObserver.observe(car
 const cursor = document.querySelector('.cursor');
 const follower = document.querySelector('.cursor-follower');
 
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX - 6 + 'px';
-    cursor.style.top = e.clientY - 6 + 'px';
-    follower.style.left = e.clientX - 17 + 'px';
-    follower.style.top = e.clientY - 17 + 'px';
-});
-
-document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        follower.style.width = '50px';
-        follower.style.height = '50px';
-        follower.style.borderColor = 'var(--orange)';
-        cursor.style.transform = 'scale(1.5)';
+if (cursor && follower) {
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX - 6 + 'px';
+        cursor.style.top = e.clientY - 6 + 'px';
+        follower.style.left = e.clientX - 17 + 'px';
+        follower.style.top = e.clientY - 17 + 'px';
     });
-    el.addEventListener('mouseleave', () => {
-        follower.style.width = '35px';
-        follower.style.height = '35px';
-        follower.style.borderColor = 'var(--accent-header)';
-        cursor.style.transform = 'scale(1)';
+
+    document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            follower.style.width = '50px';
+            follower.style.height = '50px';
+            follower.style.borderColor = 'var(--orange)';
+            cursor.style.transform = 'scale(1.5)';
+        });
+        el.addEventListener('mouseleave', () => {
+            follower.style.width = '35px';
+            follower.style.height = '35px';
+            follower.style.borderColor = 'var(--accent-header)';
+            cursor.style.transform = 'scale(1)';
+        });
     });
-});
-
-const otherSide = document.getElementById('other-side');
-
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    otherSide.style.backgroundPositionY = `calc(center + ${scrollY * 0.3}px)`;
-});
-
-const counters = document.querySelectorAll('.counter-number');
+}
 
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -131,9 +130,7 @@ document.querySelectorAll('.counter-number').forEach(counter => {
 
 const titleObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('show');
     });
 }, { threshold: 0.3 });
 
@@ -143,9 +140,7 @@ document.querySelectorAll('.reveal-title').forEach(title => {
 
 const aboutObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('show');
     });
 }, { threshold: 0.1 });
 
